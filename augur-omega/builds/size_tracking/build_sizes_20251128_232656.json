@@ -1,0 +1,61 @@
+{
+  "timestamp": "2025-11-28T23:26:56.109445",
+  "build_sizes": {
+    "android": {
+      "bytes": 0,
+      "human_readable": "0.00 B",
+      "file_count": 1
+    },
+    "electron": {
+      "bytes": 68,
+      "human_readable": "68.00 B",
+      "file_count": 1
+    },
+    "ios": {
+      "bytes": 0,
+      "human_readable": "0.00 B",
+      "file_count": 1
+    },
+    "linux": {
+      "bytes": 7090789,
+      "human_readable": "6.76 MB",
+      "file_count": 1
+    },
+    "macos": {
+      "bytes": 42,
+      "human_readable": "42.00 B",
+      "file_count": 3
+    },
+    "pwa_multi_llm": {
+      "bytes": 9034,
+      "human_readable": "8.82 KB",
+      "file_count": 3
+    },
+    "size_tracking": {
+      "bytes": 2027,
+      "human_readable": "1.98 KB",
+      "file_count": 1
+    },
+    "tauri": {
+      "bytes": 3813,
+      "human_readable": "3.72 KB",
+      "file_count": 5
+    },
+    "tui_cli": {
+      "bytes": 7243,
+      "human_readable": "7.07 KB",
+      "file_count": 2
+    },
+    "web": {
+      "bytes": 0,
+      "human_readable": "0.00 B",
+      "file_count": 0
+    },
+    "windows": {
+      "bytes": 7345976,
+      "human_readable": "7.01 MB",
+      "file_count": 1
+    }
+  },
+  "total_size": 14458992
+}

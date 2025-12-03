@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Augur Omega RXM - AI Development Platform</title>
+    <link rel="stylesheet" href="../css/brand_aligned_styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Proxima+Nova:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="app-body">
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo-container">
+                <div class="logo">
+                    <i class="fas fa-brain"></i>
+                    <span>Augur Omega</span>
+                </div>
+            </div>
+            
+            <nav class="navigation">
+                <div class="nav-section">
+                    <h3>Core Systems</h3>
+                    <a href="#" class="nav-item active" data-section="dashboard">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="#" class="nav-item" data-section="agents">
+                        <i class="fas fa-robot"></i>
+                        <span>Agent Teams</span>
+                    </a>
+                    <a href="#" class="nav-item" data-section="koshas">
+                        <i class="fas fa-layer-group"></i>
+                        <span>Koshas</span>
+                    </a>
+                </div>
+                
+                <div class="nav-section">
+                    <h3>Configuration</h3>
+                    <a href="#" class="nav-item" data-section="settings">
+                        <i class="fas fa-cog"></i>
+                        <span>Settings</span>
+                    </a>
+                    <a href="#" class="nav-item" data-section="mode-switch">
+                        <i class="fas fa-bolt"></i>
+                        <span>Mode Switch</span>
+                    </a>
+                </div>
+                
+                <div class="nav-section">
+                    <h3>Development</h3>
+                    <a href="#" class="nav-item" data-section="orchestration">
+                        <i class="fas fa-project-diagram"></i>
+                        <span>Orchestration</span>
+                    </a>
+                    <a href="#" class="nav-item" data-section="integration">
+                        <i class="fas fa-plug"></i>
+                        <span>Integration</span>
+                    </a>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Header -->
+        <header class="header">
+            <div class="header-left">
+                <h1>Augur Omega Dashboard</h1>
+            </div>
+            
+            <div class="header-right">
+                <div class="mode-switcher">
+                    <button class="mode-btn active" data-mode="essence">Essence</button>
+                    <button class="mode-btn" data-mode="smart">Smart</button>
+                    <button class="mode-btn" data-mode="expert">Expert</button>
+                </div>
+                
+                <button class="settings-btn" id="settings-toggle" title="Settings">
+                    <i class="fas fa-cog"></i>
+                </button>
+                
+                <div class="user-menu">
+                    <i class="fas fa-user-circle fa-2x"></i>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Essence Mode View -->
+            <div class="essence-mode active" id="essence-view">
+                <div class="now-focus">
+                    <h2 class="focus-title">Focus Task</h2>
+                    <p>Currently processing agent team formation with optimal mathematical efficiency</p>
+                    <div class="focus-meta">
+                        <span><i class="fas fa-clock"></i> 30 mins remaining</span>
+                        <span><i class="fas fa-check-circle"></i> 75% complete</span>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button class="btn btn-primary">
+                        <i class="fas fa-play"></i> Continue
+                    </button>
+                    <button class="btn btn-outline">
+                        <i class="fas fa-pause"></i> Pause
+                    </button>
+                    <button class="btn btn-outline">
+                        <i class="fas fa-cog"></i> Configure
+                    </button>
+                </div>
+
+                <div class="insights-section">
+                    <h3>Key Insights</h3>
+                    <div class="insights-grid">
+                        <div class="insight-card">
+                            <div class="insight-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h4 class="insight-title">Agent Efficiency</h4>
+                            <p class="insight-content">Optimal formation achieved with 94% efficiency rating</p>
+                        </div>
+                        
+                        <div class="insight-card">
+                            <div class="insight-icon">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <h4 class="insight-title">Processing Speed</h4>
+                            <p class="insight-content">Current tasks processing 2.3x faster than baseline</p>
+                        </div>
+                        
+                        <div class="insight-card">
+                            <div class="insight-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h4 class="insight-title">System Security</h4>
+                            <p class="insight-content">All koshas operating in secure environment</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="needs-attention">
+                    <h3>Needs Attention</h3>
+                    <ul class="attention-list">
+                        <li class="attention-item">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <span>Settings synchronization across koshas requires review</span>
+                        </li>
+                        <li class="attention-item">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <span>Agent formation parameters may need adjustment</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Smart Mode View (Hidden by default) -->
+            <div class="smart-mode" id="smart-view">
+                <h2>Smart Configuration</h2>
+                <p>AI-optimized settings currently active. System is automatically adjusting parameters for optimal performance.</p>
+                
+                <div class="smart-controls">
+                    <div class="control-group">
+                        <h4>Agent Formation</h4>
+                        <div class="control-item">
+                            <label>Optimization Level</label>
+                            <div class="slider-container">
+                                <input type="range" min="1" max="10" value="8" class="slider" id="optimization-level">
+                                <span>8/10</span>
+                            </div>
+                        </div>
+                        
+                        <div class="control-item">
+                            <label>Subject Matter Expertise</label>
+                            <select id="expertise-level">
+                                <option>High</option>
+                                <option selected>Medium</option>
+                                <option>Low</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="control-group">
+                        <h4>Processing Priority</h4>
+                        <div class="priority-indicators">
+                            <div class="priority-item">
+                                <span class="priority-name">Prime Koshas</span>
+                                <div class="priority-bar">
+                                    <div class="priority-fill" style="width: 95%;"></div>
+                                </div>
+                            </div>
+                            <div class="priority-item">
+                                <span class="priority-name">Domain Koshas</span>
+                                <div class="priority-bar">
+                                    <div class="priority-fill" style="width: 85%;"></div>
+                                </div>
+                            </div>
+                            <div class="priority-item">
+                                <span class="priority-name">Microagents</span>
+                                <div class="priority-bar">
+                                    <div class="priority-fill" style="width: 70%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Expert Mode View (Hidden by default) -->
+            <div class="expert-mode" id="expert-view">
+                <h2>Expert Configuration</h2>
+                <p>Full access to all system parameters. Proceed with caution.</p>
+                
+                <div class="expert-controls">
+                    <div class="control-group">
+                        <h4>System Parameters</h4>
+                        
+                        <div class="control-item">
+                            <label for="concurrency-level">Concurrency Level</label>
+                            <input type="number" id="concurrency-level" value="10">
+                        </div>
+                        
+                        <div class="control-item">
+                            <label for="memory-allocation">Memory Allocation (GB)</label>
+                            <input type="number" id="memory-allocation" value="32">
+                        </div>
+                        
+                        <div class="control-item">
+                            <label for="processing-threads">Processing Threads</label>
+                            <input type="number" id="processing-threads" value="16">
+                        </div>
+                    </div>
+                    
+                    <div class="control-group">
+                        <h4>Agent Formation Algorithms</h4>
+                        
+                        <div class="control-item">
+                            <label>
+                                <input type="checkbox" checked> Mathematical Optimization Algorithm
+                            </label>
+                        </div>
+                        
+                        <div class="control-item">
+                            <label>
+                                <input type="checkbox" checked> Subject Matter Expertise Matching
+                            </label>
+                        </div>
+                        
+                        <div class="control-item">
+                            <label>
+                                <input type="checkbox"> Advanced Load Balancing
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Natural Language Input (Always visible) -->
+    <div class="natural-input-container">
+        <div class="natural-input-wrapper">
+            <input type="text" class="natural-input" placeholder="Natural language command (e.g., 'Optimize agent formation for maximum efficiency')">
+            <button class="speech-btn" title="Voice Input">
+                <i class="fas fa-microphone"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Settings Modal -->
+    <div class="modal-overlay" id="settings-modal" style="display: none;">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 class="modal-title">Settings</h3>
+                <button class="modal-close" id="modal-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="settings-content">
+                    <div class="settings-section">
+                        <h4>Appearance</h4>
+                        <div class="settings-option">
+                            <label>Theme</label>
+                            <select id="theme-selector">
+                                <option value="dark">Dark</option>
+                                <option value="light">Light</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="settings-section">
+                        <h4>Behavior</h4>
+                        <div class="settings-option">
+                            <label>
+                                <input type="checkbox" id="auto-optimize" checked> Auto-optimize agent formation
+                            </label>
+                        </div>
+                        <div class="settings-option">
+                            <label>
+                                <input type="checkbox" id="auto-sync"> Auto-sync settings across koshas
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="settings-section">
+                        <h4>Integration</h4>
+                        <div class="settings-option">
+                            <label>API Key</label>
+                            <input type="password" id="api-key" placeholder="Enter your API key">
+                        </div>
+                    </div>
+                    
+                    <div class="settings-buttons">
+                        <button class="btn btn-primary" id="save-settings">Save</button>
+                        <button class="btn btn-outline" id="reset-settings">Reset to Defaults</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

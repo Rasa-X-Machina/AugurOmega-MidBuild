@@ -1,0 +1,19 @@
+[package]
+name = "augur-omega-desktop"
+version = "1.0.0"
+description = "AI Business Automation Platform"
+authors = ["Augur Omega Team"]
+license = "MIT"
+edition = "2021"
+
+[dependencies]
+tauri = { version = "1.0", features = ["api-all"] }
+serde = { version = "1.0", features = ["derive"] }
+tokio = { version = "1.0", features = ["full"] }
+
+[build-dependencies]
+tauri-build = { version = "1.0", features = ["codegen"] }
+
+[features]
+default = ["custom-protocol"]
+custom-protocol = ["tauri/custom-protocol"]

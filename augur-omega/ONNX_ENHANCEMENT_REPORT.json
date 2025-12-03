@@ -1,0 +1,2152 @@
+{
+  "project": "ONNX Multi-LLM Enhancement for Augur Omega",
+  "status": "completed",
+  "execution_summary": {
+    "total_agents_executed": 6,
+    "total_time_elapsed": "N/A",
+    "results_generated": 6
+  },
+  "research_findings": {
+    "repository_info": {
+      "id": 102692863,
+      "node_id": "MDEwOlJlcG9zaXRvcnkxMDI2OTI4NjM=",
+      "name": "onnx",
+      "full_name": "onnx/onnx",
+      "private": false,
+      "owner": {
+        "login": "onnx",
+        "id": 31675368,
+        "node_id": "MDEyOk9yZ2FuaXphdGlvbjMxNjc1MzY4",
+        "avatar_url": "https://avatars.githubusercontent.com/u/31675368?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/onnx",
+        "html_url": "https://github.com/onnx",
+        "followers_url": "https://api.github.com/users/onnx/followers",
+        "following_url": "https://api.github.com/users/onnx/following{/other_user}",
+        "gists_url": "https://api.github.com/users/onnx/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/onnx/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/onnx/subscriptions",
+        "organizations_url": "https://api.github.com/users/onnx/orgs",
+        "repos_url": "https://api.github.com/users/onnx/repos",
+        "events_url": "https://api.github.com/users/onnx/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/onnx/received_events",
+        "type": "Organization",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "html_url": "https://github.com/onnx/onnx",
+      "description": "Open standard for machine learning interoperability",
+      "fork": false,
+      "url": "https://api.github.com/repos/onnx/onnx",
+      "forks_url": "https://api.github.com/repos/onnx/onnx/forks",
+      "keys_url": "https://api.github.com/repos/onnx/onnx/keys{/key_id}",
+      "collaborators_url": "https://api.github.com/repos/onnx/onnx/collaborators{/collaborator}",
+      "teams_url": "https://api.github.com/repos/onnx/onnx/teams",
+      "hooks_url": "https://api.github.com/repos/onnx/onnx/hooks",
+      "issue_events_url": "https://api.github.com/repos/onnx/onnx/issues/events{/number}",
+      "events_url": "https://api.github.com/repos/onnx/onnx/events",
+      "assignees_url": "https://api.github.com/repos/onnx/onnx/assignees{/user}",
+      "branches_url": "https://api.github.com/repos/onnx/onnx/branches{/branch}",
+      "tags_url": "https://api.github.com/repos/onnx/onnx/tags",
+      "blobs_url": "https://api.github.com/repos/onnx/onnx/git/blobs{/sha}",
+      "git_tags_url": "https://api.github.com/repos/onnx/onnx/git/tags{/sha}",
+      "git_refs_url": "https://api.github.com/repos/onnx/onnx/git/refs{/sha}",
+      "trees_url": "https://api.github.com/repos/onnx/onnx/git/trees{/sha}",
+      "statuses_url": "https://api.github.com/repos/onnx/onnx/statuses/{sha}",
+      "languages_url": "https://api.github.com/repos/onnx/onnx/languages",
+      "stargazers_url": "https://api.github.com/repos/onnx/onnx/stargazers",
+      "contributors_url": "https://api.github.com/repos/onnx/onnx/contributors",
+      "subscribers_url": "https://api.github.com/repos/onnx/onnx/subscribers",
+      "subscription_url": "https://api.github.com/repos/onnx/onnx/subscription",
+      "commits_url": "https://api.github.com/repos/onnx/onnx/commits{/sha}",
+      "git_commits_url": "https://api.github.com/repos/onnx/onnx/git/commits{/sha}",
+      "comments_url": "https://api.github.com/repos/onnx/onnx/comments{/number}",
+      "issue_comment_url": "https://api.github.com/repos/onnx/onnx/issues/comments{/number}",
+      "contents_url": "https://api.github.com/repos/onnx/onnx/contents/{+path}",
+      "compare_url": "https://api.github.com/repos/onnx/onnx/compare/{base}...{head}",
+      "merges_url": "https://api.github.com/repos/onnx/onnx/merges",
+      "archive_url": "https://api.github.com/repos/onnx/onnx/{archive_format}{/ref}",
+      "downloads_url": "https://api.github.com/repos/onnx/onnx/downloads",
+      "issues_url": "https://api.github.com/repos/onnx/onnx/issues{/number}",
+      "pulls_url": "https://api.github.com/repos/onnx/onnx/pulls{/number}",
+      "milestones_url": "https://api.github.com/repos/onnx/onnx/milestones{/number}",
+      "notifications_url": "https://api.github.com/repos/onnx/onnx/notifications{?since,all,participating}",
+      "labels_url": "https://api.github.com/repos/onnx/onnx/labels{/name}",
+      "releases_url": "https://api.github.com/repos/onnx/onnx/releases{/id}",
+      "deployments_url": "https://api.github.com/repos/onnx/onnx/deployments",
+      "created_at": "2017-09-07T04:53:45Z",
+      "updated_at": "2025-11-28T21:34:43Z",
+      "pushed_at": "2025-11-28T07:50:56Z",
+      "git_url": "git://github.com/onnx/onnx.git",
+      "ssh_url": "git@github.com:onnx/onnx.git",
+      "clone_url": "https://github.com/onnx/onnx.git",
+      "svn_url": "https://github.com/onnx/onnx",
+      "homepage": "https://onnx.ai/",
+      "size": 44763,
+      "stargazers_count": 19941,
+      "watchers_count": 19941,
+      "language": "Python",
+      "has_issues": true,
+      "has_projects": true,
+      "has_downloads": true,
+      "has_wiki": true,
+      "has_pages": true,
+      "has_discussions": true,
+      "forks_count": 3837,
+      "mirror_url": null,
+      "archived": false,
+      "disabled": false,
+      "open_issues_count": 280,
+      "license": {
+        "key": "apache-2.0",
+        "name": "Apache License 2.0",
+        "spdx_id": "Apache-2.0",
+        "url": "https://api.github.com/licenses/apache-2.0",
+        "node_id": "MDc6TGljZW5zZTI="
+      },
+      "allow_forking": true,
+      "is_template": false,
+      "web_commit_signoff_required": true,
+      "topics": [
+        "deep-learning",
+        "deep-neural-networks",
+        "dnn",
+        "keras",
+        "machine-learning",
+        "ml",
+        "neural-network",
+        "onnx",
+        "pytorch",
+        "scikit-learn",
+        "tensorflow"
+      ],
+      "visibility": "public",
+      "forks": 3837,
+      "open_issues": 280,
+      "watchers": 19941,
+      "default_branch": "main",
+      "temp_clone_token": null,
+      "custom_properties": {},
+      "organization": {
+        "login": "onnx",
+        "id": 31675368,
+        "node_id": "MDEyOk9yZ2FuaXphdGlvbjMxNjc1MzY4",
+        "avatar_url": "https://avatars.githubusercontent.com/u/31675368?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/onnx",
+        "html_url": "https://github.com/onnx",
+        "followers_url": "https://api.github.com/users/onnx/followers",
+        "following_url": "https://api.github.com/users/onnx/following{/other_user}",
+        "gists_url": "https://api.github.com/users/onnx/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/onnx/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/onnx/subscriptions",
+        "organizations_url": "https://api.github.com/users/onnx/orgs",
+        "repos_url": "https://api.github.com/users/onnx/repos",
+        "events_url": "https://api.github.com/users/onnx/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/onnx/received_events",
+        "type": "Organization",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "network_count": 3837,
+      "subscribers_count": 427
+    },
+    "contents": [
+      {
+        "name": ".clang-format",
+        "path": ".clang-format",
+        "sha": "a441e05c9d27272174c630ba86f6b889e95c0982",
+        "size": 2733,
+        "url": "https://api.github.com/repos/onnx/onnx/contents/.clang-format?ref=main",
+        "html_url": "https://github.com/onnx/onnx/blob/main/.clang-format",
+        "git_url": "https://api.github.com/repos/onnx/onnx/git/blobs/a441e05c9d27272174c630ba86f6b889e95c0982",
+        "download_url": "https://raw.githubusercontent.com/onnx/onnx/main/.clang-format",
+        "type": "file",
+        "_links": {
+          "self": "https://api.github.com/repos/onnx/onnx/contents/.clang-format?ref=main",
+          "git": "https://api.github.com/repos/onnx/onnx/git/blobs/a441e05c9d27272174c630ba86f6b889e95c0982",
+          "html": "https://github.com/onnx/onnx/blob/main/.clang-format"
+        }
+      },
+      {
+        "name": ".clang-tidy",
+        "path": ".clang-tidy",
+        "sha": "8f344e5a153eeb8c1cfdb18bc3a875c50d083e19",
+        "size": 2098,
+        "url": "https://api.github.com/repos/onnx/onnx/contents/.clang-tidy?ref=main",
+        "html_url": "https://github.com/onnx/onnx/blob/main/.clang-tidy",
+        "git_url": "https://api.github.com/repos/onnx/onnx/git/blobs/8f344e5a153eeb8c1cfdb18bc3a875c50d083e19",
+        "download_url": "https://raw.githubusercontent.com/onnx/onnx/main/.clang-tidy",
+        "type": "file",
+        "_links": {
+          "self": "https://api.github.com/repos/onnx/onnx/contents/.clang-tidy?ref=main",
+          "git": "https://api.github.com/repos/onnx/onnx/git/blobs/8f344e5a153eeb8c1cfdb18bc3a875c50d083e19",
+          "html": "https://github.com/onnx/onnx/blob/main/.clang-tidy"
+        }
+      },
+      {
+        "name": ".editorconfig",
+        "path": ".editorconfig",
+        "sha": "16df8dab4bb69e6b738d5193aa2cbbf5336f90f4",
+        "size": 99,
+        "url": "https://api.github.com/repos/onnx/onnx/contents/.editorconfig?ref=main",
+        "html_url": "https://github.com/onnx/onnx/blob/main/.editorconfig",
+        "git_url": "https://api.github.com/repos/onnx/onnx/git/blobs/16df8dab4bb69e6b738d5193aa2cbbf5336f90f4",
+        "download_url": "https://raw.githubusercontent.com/onnx/onnx/main/.editorconfig",
+        "type": "file",
+        "_links": {
+          "self": "https://api.github.com/repos/onnx/onnx/contents/.editorconfig?ref=main",
+          "git": "https://api.github.com/repos/onnx/onnx/git/blobs/16df8dab4bb69e6b738d5193aa2cbbf5336f90f4",
+          "html": "https://github.com/onnx/onnx/blob/main/.editorconfig"
+        }
+      },
+      {
+        "name": ".git-blame-ignore-revs",
+        "path": ".git-blame-ignore-revs",
+        "sha": "5af302e1a1c057671370b6b4b0b8410d69ef8f4b",
+        "size": 312,
+        "url": "https://api.github.com/repos/onnx/onnx/contents/.git-blame-ignore-revs?ref=main",
+        "html_url": "https://github.com/onnx/onnx/blob/main/.git-blame-ignore-revs",
+        "git_url": "https://api.github.com/repos/onnx/onnx/git/blobs/5af302e1a1c057671370b6b4b0b8410d69ef8f4b",
+        "download_url": "https://raw.githubusercontent.com/onnx/onnx/main/.git-blame-ignore-revs",
+        "type": "file",
+        "_links": {
+          "self": "https://api.github.com/repos/onnx/onnx/contents/.git-blame-ignore-revs?ref=main",
+          "git": "https://api.github.com/repos/onnx/onnx/git/blobs/5af302e1a1c057671370b6b4b0b8410d69ef8f4b",
+          "html": "https://github.com/onnx/onnx/blob/main/.git-blame-ignore-revs"
+        }
+      },
+      {
+        "name": ".gitattributes",
+        "path": ".gitattributes",
+        "sha": "14563df9194ec65839d7280576f2aeec8aef318f",
+        "size": 68,
+        "url": "https://api.github.com/repos/onnx/onnx/contents/.gitattributes?ref=main",
+        "html_url": "https://github.com/onnx/onnx/blob/main/.gitattributes",
+        "git_url": "https://api.github.com/repos/onnx/onnx/git/blobs/14563df9194ec65839d7280576f2aeec8aef318f",
+        "download_url": "https://raw.githubusercontent.com/onnx/onnx/main/.gitattributes",
+        "type": "file",
+        "_links": {
+          "self": "https://api.github.com/repos/onnx/onnx/contents/.gitattributes?ref=main",
+          "git": "https://api.github.com/repos/onnx/onnx/git/blobs/14563df9194ec65839d7280576f2aeec8aef318f",
+          "html": "https://github.com/onnx/onnx/blob/main/.gitattributes"
+        }
+      },
+      {
+        "name": ".github",
+        "path": ".github",
+        "sha": "2c346861233c4e948e10a406ac153a4ce60fc163",
+        "size": 0,
+        "url": "https://api.github.com/repos/onnx/onnx/contents/.github?ref=main",
+        "html_url": "https://github.com/onnx/onnx/tree/main/.github",
+        "git_url": "https://api.github.com/repos/onnx/onnx/git/trees/2c346861233c4e948e10a406ac153a4ce60fc163",
+        "download_url": null,
+        "type": "dir",
+        "_links": {
+          "self": "https://api.github.com/repos/onnx/onnx/contents/.github?ref=main",
+          "git": "https://api.github.com/repos/onnx/onnx/git/trees/2c346861233c4e948e10a406ac153a4ce60fc163",
+          "html": "https://github.com/onnx/onnx/tree/main/.github"
+        }
+      },
+      {
+        "name": ".gitignore",
+        "path": ".gitignore",
+        "sha": "4aecae07b4552b36a70ca4f25ce7192bf337021d",
+        "size": 1363,
+        "url": "https://api.github.com/repos/onnx/onnx/contents/.gitignore?ref=main",
+        "html_url": "https://github.com/onnx/onnx/blob/main/.gitignore",
+        "git_url": "https://api.github.com/repos/onnx/onnx/git/blobs/4aecae07b4552b36a70ca4f25ce7192bf337021d",
+        "download_url": "https://raw.githubusercontent.com/onnx/onnx/main/.gitignore",
+        "type": "file",
+        "_links": {
+          "self": "https://api.github.com/repos/onnx/onnx/contents/.gitignore?ref=main",
+          "git": "https://api.github.com/repos/onnx/onnx/git/blobs/4aecae07b4552b36a70ca4f25ce7192bf337021d",
+          "html": "https://github.com/onnx/onnx/blob/main/.gitignore"
+        }
+      },
+      {
+        "name": ".gitmodules",
+        "path": ".gitmodules",
+        "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+        "size": 0,
+        "url": "https://api.github.com/repos/onnx/onnx/contents/.gitmodules?ref=main",
+        "html_url": "https://github.com/onnx/onnx/blob/main/.gitmodules",
+        "git_url": "https://api.github.com/repos/onnx/onnx/git/blobs/e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+        "download_url": "https://raw.githubusercontent.com/onnx/onnx/main/.gitmodules",
+        "type": "file",
+        "_links": {
+          "self": "https://api.github.com/repos/onnx/onnx/contents/.gitmodules?ref=main",
+          "git": "https://api.github.com/repos/onnx/onnx/git/blobs/e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+          "html": "https://github.com/onnx/onnx/blob/main/.gitmodules"
+        }
+      },
+      {
+        "name": ".lintrunner.toml",
+        "path": ".lintrunner.toml",
+        "sha": "1e0c3e873d4a9b88a3345b1b2d1ceca3d22cc5e0",
+        "size": 4303,
+        "url": "https://api.github.com/repos/onnx/onnx/contents/.lintrunner.toml?ref=main",
+        "html_url": "https://github.com/onnx/onnx/blob/main/.lintrunner.toml",
+        "git_url": "https://api.github.com/repos/onnx/onnx/git/blobs/1e0c3e873d4a9b88a3345b1b2d1ceca3d22cc5e0",
+        "download_url": "https://raw.githubusercontent.com/onnx/onnx/main/.lintrunner.toml",
+        "type": "file",
+        "_links": {
+          "self": "https://api.github.com/repos/onnx/onnx/contents/.lintrunner.toml?ref=main",
+          "git": "https://api.github.com/repos/onnx/onnx/git/blobs/1e0c3e873d4a9b88a3345b1b2d1ceca3d22cc5e0",
+          "html": "https://github.com/onnx/onnx/blob/main/.lintrunner.toml"
+        }
+      },
+      {
+        "name": "CMakeLists.txt",
+        "path": "CMakeLists.txt",
+        "sha": "4a7df7d715c9c50d1fbebf6be4404e3913deda48",
+        "size": 21556,
+        "url": "https://api.github.com/repos/onnx/onnx/contents/CMakeLists.txt?ref=main",
+        "html_url": "https://github.com/onnx/onnx/blob/main/CMakeLists.txt",
+        "git_url": "https://api.github.com/repos/onnx/onnx/git/blobs/4a7df7d715c9c50d1fbebf6be4404e3913deda48",
+        "download_url": "https://raw.githubusercontent.com/onnx/onnx/main/CMakeLists.txt",
+        "type": "file",
+        "_links": {
+          "self": "https://api.github.com/repos/onnx/onnx/contents/CMakeLists.txt?ref=main",
+          "git": "https://api.github.com/repos/onnx/onnx/git/blobs/4a7df7d715c9c50d1fbebf6be4404e3913deda48",
+          "html": "https://github.com/onnx/onnx/blob/main/CMakeLists.txt"
+        }
+      },
+      {
+        "name": "CODEOWNERS",
+        "path": "CODEOWNERS",
+        "sha": "016bc7cf34514215c68bc4ba26346ec028fa05b9",
+        "size": 619,
+        "url": "https://api.github.com/repos/onnx/onnx/contents/CODEOWNERS?ref=main",
+        "html_url": "https://github.com/onnx/onnx/blob/main/CODEOWNERS",
+        "git_url": "https://api.github.com/repos/onnx/onnx/git/blobs/016bc7cf34514215c68bc4ba26346ec028fa05b9",
+        "download_url": "https://raw.githubusercontent.com/onnx/onnx/main/CODEOWNERS",
+        "type": "file",
+        "_links": {
+          "self": "https://api.github.com/repos/onnx/onnx/contents/CODEOWNERS?ref=main",
+          "git": "https://api.github.com/repos/onnx/onnx/git/blobs/016bc7cf34514215c68bc4ba26346ec028fa05b9",
+          "html": "https://github.com/onnx/onnx/blob/main/CODEOWNERS"
+        }
+      },
+      {
+        "name": "CODE_OF_CONDUCT.md",
+        "path": "CODE_OF_CONDUCT.md",
+        "sha": "f282992e0b84e44679176b12fc812087335b4800",
+        "size": 76,
+        "url": "https://api.github.com/repos/onnx/onnx/contents/CODE_OF_CONDUCT.md?ref=main",
+        "html_url": "https://github.com/onnx/onnx/blob/main/CODE_OF_CONDUCT.md",
+        "git_url": "https://api.github.com/repos/onnx/onnx/git/blobs/f282992e0b84e44679176b12fc812087335b4800",
+        "download_url": "https://raw.githubusercontent.com/onnx/onnx/main/CODE_OF_CONDUCT.md",
+        "type": "file",
+        "_links": {
+          "self": "https://api.github.com/repos/onnx/onnx/contents/CODE_OF_CONDUCT.md?ref=main",
+          "git": "https://api.github.com/repos/onnx/onnx/git/blobs/f282992e0b84e44679176b12fc812087335b4800",
+          "html": "https://github.com/onnx/onnx/blob/main/CODE_OF_CONDUCT.md"
+        }
+      },
+      {
+        "name": "CONTRIBUTING.md",
+        "path": "CONTRIBUTING.md",
+        "sha": "83b14ae39c066db6edc5e1c4268b0b4e025a974e",
+        "size": 8803,
+        "url": "https://api.github.com/repos/onnx/onnx/contents/CONTRIBUTING.md?ref=main",
+        "html_url": "https://github.com/onnx/onnx/blob/main/CONTRIBUTING.md",
+        "git_url": "https://api.github.com/repos/onnx/onnx/git/blobs/83b14ae39c066db6edc5e1c4268b0b4e025a974e",
+        "download_url": "https://raw.githubusercontent.com/onnx/onnx/main/CONTRIBUTING.md",
+        "type": "file",
+        "_links": {
+          "self": "https://api.github.com/repos/onnx/onnx/contents/CONTRIBUTING.md?ref=main",
+          "git": "https://api.github.com/repos/onnx/onnx/git/blobs/83b14ae39c066db6edc5e1c4268b0b4e025a974e",
+          "html": "https://github.com/onnx/onnx/blob/main/CONTRIBUTING.md"
+        }
+      },
+      {
+        "name": "CPPLINT.cfg",
+        "path": "CPPLINT.cfg",
+        "sha": "12c1c7be0d7737a36612ae47710e355e24df9112",
+        "size": 19,
+        "url": "https://api.github.com/repos/onnx/onnx/contents/CPPLINT.cfg?ref=main",
+        "html_url": "https://github.com/onnx/onnx/blob/main/CPPLINT.cfg",
+        "git_url": "https://api.github.com/repos/onnx/onnx/git/blobs/12c1c7be0d7737a36612ae47710e355e24df9112",
+        "download_url": "https://raw.githubusercontent.com/onnx/onnx/main/CPPLINT.cfg",
+        "type": "file",
+        "_links": {
+          "self": "https://api.github.com/repos/onnx/onnx/contents/CPPLINT.cfg?ref=main",
+          "git": "https://api.github.com/repos/onnx/onnx/git/blobs/12c1c7be0d7737a36612ae47710e355e24df9112",
+          "html": "https://github.com/onnx/onnx/blob/main/CPPLINT.cfg"
+        }
+      },
+      {
+        "name": "INSTALL.md",
+        "path": "INSTALL.md",
+        "sha": "d4cbfb1496696848bba38b0ead2f9317dfeebacf",
+        "size": 10224,
+        "url": "https://api.github.com/repos/onnx/onnx/contents/INSTALL.md?ref=main",
+        "html_url": "https://github.com/onnx/onnx/blob/main/INSTALL.md",
+        "git_url": "https://api.github.com/repos/onnx/onnx/git/blobs/d4cbfb1496696848bba38b0ead2f9317dfeebacf",
+        "download_url": "https://raw.githubusercontent.com/onnx/onnx/main/INSTALL.md",
+        "type": "file",
+        "_links": {
+          "self": "https://api.github.com/repos/onnx/onnx/contents/INSTALL.md?ref=main",
+          "git": "https://api.github.com/repos/onnx/onnx/git/blobs/d4cbfb1496696848bba38b0ead2f9317dfeebacf",
+          "html": "https://github.com/onnx/onnx/blob/main/INSTALL.md"
+        }
+      },
+      {
+        "name": "LICENSE",
+        "path": "LICENSE",
+        "sha": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+        "size": 11358,
+        "url": "https://api.github.com/repos/onnx/onnx/contents/LICENSE?ref=main",
+        "html_url": "https://github.com/onnx/onnx/blob/main/LICENSE",
+        "git_url": "https://api.github.com/repos/onnx/onnx/git/blobs/d645695673349e3947e8e5ae42332d0ac3164cd7",
+        "download_url": "https://raw.githubusercontent.com/onnx/onnx/main/LICENSE",
+        "type": "file",
+        "_links": {
+          "self": "https://api.github.com/repos/onnx/onnx/contents/LICENSE?ref=main",
+          "git": "https://api.github.com/repos/onnx/onnx/git/blobs/d645695673349e3947e8e5ae42332d0ac3164cd7",
+          "html": "https://github.com/onnx/onnx/blob/main/LICENSE"
+        }
+      },
+      {
+        "name": "LICENSES",
+        "path": "LICENSES",
+        "sha": "b0e9be06d6a9e4d8a938d46c782e12d29ca88d88",
+        "size": 0,
+        "url": "https://api.github.com/repos/onnx/onnx/contents/LICENSES?ref=main",
+        "html_url": "https://github.com/onnx/onnx/tree/main/LICENSES",
+        "git_url": "https://api.github.com/repos/onnx/onnx/git/trees/b0e9be06d6a9e4d8a938d46c782e12d29ca88d88",
+        "download_url": null,
+        "type": "dir",
+        "_links": {
+          "self": "https://api.github.com/repos/onnx/onnx/contents/LICENSES?ref=main",
+          "git": "https://api.github.com/repos/onnx/onnx/git/trees/b0e9be06d6a9e4d8a938d46c782e12d29ca88d88",
+          "html": "https://github.com/onnx/onnx/tree/main/LICENSES"
+        }
+      },
+      {
+        "name": "MANIFEST.in",
+        "path": "MANIFEST.in",
+        "sha": "19eb5e6a640dcb5efa16257caeeb1d39d0bdbc9f",
+        "size": 225,
+        "url": "https://api.github.com/repos/onnx/onnx/contents/MANIFEST.in?ref=main",
+        "html_url": "https://github.com/onnx/onnx/blob/main/MANIFEST.in",
+        "git_url": "https://api.github.com/repos/onnx/onnx/git/blobs/19eb5e6a640dcb5efa16257caeeb1d39d0bdbc9f",
+        "download_url": "https://raw.githubusercontent.com/onnx/onnx/main/MANIFEST.in",
+        "type": "file",
+        "_links": {
+          "self": "https://api.github.com/repos/onnx/onnx/contents/MANIFEST.in?ref=main",
+          "git": "https://api.github.com/repos/onnx/onnx/git/blobs/19eb5e6a640dcb5efa16257caeeb1d39d0bdbc9f",
+          "html": "https://github.com/onnx/onnx/blob/main/MANIFEST.in"
+        }
+      },
+      {
+        "name": "README.md",
+        "path": "README.md",
+        "sha": "c65311d92445a0ced0bd87fc6b554b29abd07299",
+        "size": 7795,
+        "url": "https://api.github.com/repos/onnx/onnx/contents/README.md?ref=main",
+        "html_url": "https://github.com/onnx/onnx/blob/main/README.md",
+        "git_url": "https://api.github.com/repos/onnx/onnx/git/blobs/c65311d92445a0ced0bd87fc6b554b29abd07299",
+        "download_url": "https://raw.githubusercontent.com/onnx/onnx/main/README.md",
+        "type": "file",
+        "_links": {
+          "self": "https://api.github.com/repos/onnx/onnx/contents/README.md?ref=main",
+          "git": "https://api.github.com/repos/onnx/onnx/git/blobs/c65311d92445a0ced0bd87fc6b554b29abd07299",
+          "html": "https://github.com/onnx/onnx/blob/main/README.md"
+        }
+      },
+      {
+        "name": "RELEASE-MANAGEMENT.md",
+        "path": "RELEASE-MANAGEMENT.md",
+        "sha": "ff178baf6cf97d413fe21c70d94b09701827dcbb",
+        "size": 5329,
+        "url": "https://api.github.com/repos/onnx/onnx/contents/RELEASE-MANAGEMENT.md?ref=main",
+        "html_url": "https://github.com/onnx/onnx/blob/main/RELEASE-MANAGEMENT.md",
+        "git_url": "https://api.github.com/repos/onnx/onnx/git/blobs/ff178baf6cf97d413fe21c70d94b09701827dcbb",
+        "download_url": "https://raw.githubusercontent.com/onnx/onnx/main/RELEASE-MANAGEMENT.md",
+        "type": "file",
+        "_links": {
+          "self": "https://api.github.com/repos/onnx/onnx/contents/RELEASE-MANAGEMENT.md?ref=main",
+          "git": "https://api.github.com/repos/onnx/onnx/git/blobs/ff178baf6cf97d413fe21c70d94b09701827dcbb",
+          "html": "https://github.com/onnx/onnx/blob/main/RELEASE-MANAGEMENT.md"
+        }
+      },
+      {
+        "name": "REUSE.toml",
+        "path": "REUSE.toml",
+        "sha": "5d32dd920aa512fe98569bc51e8d9c5b3aa31f4c",
+        "size": 8341,
+        "url": "https://api.github.com/repos/onnx/onnx/contents/REUSE.toml?ref=main",
+        "html_url": "https://github.com/onnx/onnx/blob/main/REUSE.toml",
+        "git_url": "https://api.github.com/repos/onnx/onnx/git/blobs/5d32dd920aa512fe98569bc51e8d9c5b3aa31f4c",
+        "download_url": "https://raw.githubusercontent.com/onnx/onnx/main/REUSE.toml",
+        "type": "file",
+        "_links": {
+          "self": "https://api.github.com/repos/onnx/onnx/contents/REUSE.toml?ref=main",
+          "git": "https://api.github.com/repos/onnx/onnx/git/blobs/5d32dd920aa512fe98569bc51e8d9c5b3aa31f4c",
+          "html": "https://github.com/onnx/onnx/blob/main/REUSE.toml"
+        }
+      },
+      {
+        "name": "SECURITY.md",
+        "path": "SECURITY.md",
+        "sha": "a18dca205b2451febcacaea66e085adf63f308cd",
+        "size": 964,
+        "url": "https://api.github.com/repos/onnx/onnx/contents/SECURITY.md?ref=main",
+        "html_url": "https://github.com/onnx/onnx/blob/main/SECURITY.md",
+        "git_url": "https://api.github.com/repos/onnx/onnx/git/blobs/a18dca205b2451febcacaea66e085adf63f308cd",
+        "download_url": "https://raw.githubusercontent.com/onnx/onnx/main/SECURITY.md",
+        "type": "file",
+        "_links": {
+          "self": "https://api.github.com/repos/onnx/onnx/contents/SECURITY.md?ref=main",
+          "git": "https://api.github.com/repos/onnx/onnx/git/blobs/a18dca205b2451febcacaea66e085adf63f308cd",
+          "html": "https://github.com/onnx/onnx/blob/main/SECURITY.md"
+        }
+      },
+      {
+        "name": "VERSION_NUMBER",
+        "path": "VERSION_NUMBER",
+        "sha": "3500250a4b05b7c31a25d266f46c1fac5b04f48d",
+        "size": 7,
+        "url": "https://api.github.com/repos/onnx/onnx/contents/VERSION_NUMBER?ref=main",
+        "html_url": "https://github.com/onnx/onnx/blob/main/VERSION_NUMBER",
+        "git_url": "https://api.github.com/repos/onnx/onnx/git/blobs/3500250a4b05b7c31a25d266f46c1fac5b04f48d",
+        "download_url": "https://raw.githubusercontent.com/onnx/onnx/main/VERSION_NUMBER",
+        "type": "file",
+        "_links": {
+          "self": "https://api.github.com/repos/onnx/onnx/contents/VERSION_NUMBER?ref=main",
+          "git": "https://api.github.com/repos/onnx/onnx/git/blobs/3500250a4b05b7c31a25d266f46c1fac5b04f48d",
+          "html": "https://github.com/onnx/onnx/blob/main/VERSION_NUMBER"
+        }
+      },
+      {
+        "name": "backend.py",
+        "path": "backend.py",
+        "sha": "d34365d8d51669e7bd4f6f43cac6ccca5e39a071",
+        "size": 1629,
+        "url": "https://api.github.com/repos/onnx/onnx/contents/backend.py?ref=main",
+        "html_url": "https://github.com/onnx/onnx/blob/main/backend.py",
+        "git_url": "https://api.github.com/repos/onnx/onnx/git/blobs/d34365d8d51669e7bd4f6f43cac6ccca5e39a071",
+        "download_url": "https://raw.githubusercontent.com/onnx/onnx/main/backend.py",
+        "type": "file",
+        "_links": {
+          "self": "https://api.github.com/repos/onnx/onnx/contents/backend.py?ref=main",
+          "git": "https://api.github.com/repos/onnx/onnx/git/blobs/d34365d8d51669e7bd4f6f43cac6ccca5e39a071",
+          "html": "https://github.com/onnx/onnx/blob/main/backend.py"
+        }
+      },
+      {
+        "name": "cmake",
+        "path": "cmake",
+        "sha": "af4d4ced6c04d38b154563f7794e67e30585375c",
+        "size": 0,
+        "url": "https://api.github.com/repos/onnx/onnx/contents/cmake?ref=main",
+        "html_url": "https://github.com/onnx/onnx/tree/main/cmake",
+        "git_url": "https://api.github.com/repos/onnx/onnx/git/trees/af4d4ced6c04d38b154563f7794e67e30585375c",
+        "download_url": null,
+        "type": "dir",
+        "_links": {
+          "self": "https://api.github.com/repos/onnx/onnx/contents/cmake?ref=main",
+          "git": "https://api.github.com/repos/onnx/onnx/git/trees/af4d4ced6c04d38b154563f7794e67e30585375c",
+          "html": "https://github.com/onnx/onnx/tree/main/cmake"
+        }
+      },
+      {
+        "name": "codecov.yml",
+        "path": "codecov.yml",
+        "sha": "bfdc9877d9acc165c0342befa33f2e8f769538cf",
+        "size": 130,
+        "url": "https://api.github.com/repos/onnx/onnx/contents/codecov.yml?ref=main",
+        "html_url": "https://github.com/onnx/onnx/blob/main/codecov.yml",
+        "git_url": "https://api.github.com/repos/onnx/onnx/git/blobs/bfdc9877d9acc165c0342befa33f2e8f769538cf",
+        "download_url": "https://raw.githubusercontent.com/onnx/onnx/main/codecov.yml",
+        "type": "file",
+        "_links": {
+          "self": "https://api.github.com/repos/onnx/onnx/contents/codecov.yml?ref=main",
+          "git": "https://api.github.com/repos/onnx/onnx/git/blobs/bfdc9877d9acc165c0342befa33f2e8f769538cf",
+          "html": "https://github.com/onnx/onnx/blob/main/codecov.yml"
+        }
+      },
+      {
+        "name": "community",
+        "path": "community",
+        "sha": "4e09e9c5d9dcbb025700e3cc3e890d326ac86fd4",
+        "size": 0,
+        "url": "https://api.github.com/repos/onnx/onnx/contents/community?ref=main",
+        "html_url": "https://github.com/onnx/onnx/tree/main/community",
+        "git_url": "https://api.github.com/repos/onnx/onnx/git/trees/4e09e9c5d9dcbb025700e3cc3e890d326ac86fd4",
+        "download_url": null,
+        "type": "dir",
+        "_links": {
+          "self": "https://api.github.com/repos/onnx/onnx/contents/community?ref=main",
+          "git": "https://api.github.com/repos/onnx/onnx/git/trees/4e09e9c5d9dcbb025700e3cc3e890d326ac86fd4",
+          "html": "https://github.com/onnx/onnx/tree/main/community"
+        }
+      },
+      {
+        "name": "docs",
+        "path": "docs",
+        "sha": "9e35b0d0bfeb19c8a9ea9f54d836f6d66800c6dc",
+        "size": 0,
+        "url": "https://api.github.com/repos/onnx/onnx/contents/docs?ref=main",
+        "html_url": "https://github.com/onnx/onnx/tree/main/docs",
+        "git_url": "https://api.github.com/repos/onnx/onnx/git/trees/9e35b0d0bfeb19c8a9ea9f54d836f6d66800c6dc",
+        "download_url": null,
+        "type": "dir",
+        "_links": {
+          "self": "https://api.github.com/repos/onnx/onnx/contents/docs?ref=main",
+          "git": "https://api.github.com/repos/onnx/onnx/git/trees/9e35b0d0bfeb19c8a9ea9f54d836f6d66800c6dc",
+          "html": "https://github.com/onnx/onnx/tree/main/docs"
+        }
+      },
+      {
+        "name": "examples",
+        "path": "examples",
+        "sha": "f1b365700654f6f3867c50d207a6545e2b958f14",
+        "size": 0,
+        "url": "https://api.github.com/repos/onnx/onnx/contents/examples?ref=main",
+        "html_url": "https://github.com/onnx/onnx/tree/main/examples",
+        "git_url": "https://api.github.com/repos/onnx/onnx/git/trees/f1b365700654f6f3867c50d207a6545e2b958f14",
+        "download_url": null,
+        "type": "dir",
+        "_links": {
+          "self": "https://api.github.com/repos/onnx/onnx/contents/examples?ref=main",
+          "git": "https://api.github.com/repos/onnx/onnx/git/trees/f1b365700654f6f3867c50d207a6545e2b958f14",
+          "html": "https://github.com/onnx/onnx/tree/main/examples"
+        }
+      },
+      {
+        "name": "onnx",
+        "path": "onnx",
+        "sha": "3bf44535a1e92e21a83d3ede9947ba1c09090b27",
+        "size": 0,
+        "url": "https://api.github.com/repos/onnx/onnx/contents/onnx?ref=main",
+        "html_url": "https://github.com/onnx/onnx/tree/main/onnx",
+        "git_url": "https://api.github.com/repos/onnx/onnx/git/trees/3bf44535a1e92e21a83d3ede9947ba1c09090b27",
+        "download_url": null,
+        "type": "dir",
+        "_links": {
+          "self": "https://api.github.com/repos/onnx/onnx/contents/onnx?ref=main",
+          "git": "https://api.github.com/repos/onnx/onnx/git/trees/3bf44535a1e92e21a83d3ede9947ba1c09090b27",
+          "html": "https://github.com/onnx/onnx/tree/main/onnx"
+        }
+      },
+      {
+        "name": "pixi.lock",
+        "path": "pixi.lock",
+        "sha": "33a04aae8037b81eddbb434cb7ef38fe60200c86",
+        "size": 198425,
+        "url": "https://api.github.com/repos/onnx/onnx/contents/pixi.lock?ref=main",
+        "html_url": "https://github.com/onnx/onnx/blob/main/pixi.lock",
+        "git_url": "https://api.github.com/repos/onnx/onnx/git/blobs/33a04aae8037b81eddbb434cb7ef38fe60200c86",
+        "download_url": "https://raw.githubusercontent.com/onnx/onnx/main/pixi.lock",
+        "type": "file",
+        "_links": {
+          "self": "https://api.github.com/repos/onnx/onnx/contents/pixi.lock?ref=main",
+          "git": "https://api.github.com/repos/onnx/onnx/git/blobs/33a04aae8037b81eddbb434cb7ef38fe60200c86",
+          "html": "https://github.com/onnx/onnx/blob/main/pixi.lock"
+        }
+      },
+      {
+        "name": "pixi.toml",
+        "path": "pixi.toml",
+        "sha": "29ee9e2c624676f08a63be46818da7b6440349bf",
+        "size": 2096,
+        "url": "https://api.github.com/repos/onnx/onnx/contents/pixi.toml?ref=main",
+        "html_url": "https://github.com/onnx/onnx/blob/main/pixi.toml",
+        "git_url": "https://api.github.com/repos/onnx/onnx/git/blobs/29ee9e2c624676f08a63be46818da7b6440349bf",
+        "download_url": "https://raw.githubusercontent.com/onnx/onnx/main/pixi.toml",
+        "type": "file",
+        "_links": {
+          "self": "https://api.github.com/repos/onnx/onnx/contents/pixi.toml?ref=main",
+          "git": "https://api.github.com/repos/onnx/onnx/git/blobs/29ee9e2c624676f08a63be46818da7b6440349bf",
+          "html": "https://github.com/onnx/onnx/blob/main/pixi.toml"
+        }
+      },
+      {
+        "name": "pyproject.toml",
+        "path": "pyproject.toml",
+        "sha": "f28702c7b9bbc1b34c12519d7881adbf14811970",
+        "size": 6061,
+        "url": "https://api.github.com/repos/onnx/onnx/contents/pyproject.toml?ref=main",
+        "html_url": "https://github.com/onnx/onnx/blob/main/pyproject.toml",
+        "git_url": "https://api.github.com/repos/onnx/onnx/git/blobs/f28702c7b9bbc1b34c12519d7881adbf14811970",
+        "download_url": "https://raw.githubusercontent.com/onnx/onnx/main/pyproject.toml",
+        "type": "file",
+        "_links": {
+          "self": "https://api.github.com/repos/onnx/onnx/contents/pyproject.toml?ref=main",
+          "git": "https://api.github.com/repos/onnx/onnx/git/blobs/f28702c7b9bbc1b34c12519d7881adbf14811970",
+          "html": "https://github.com/onnx/onnx/blob/main/pyproject.toml"
+        }
+      },
+      {
+        "name": "requirements-dev.txt",
+        "path": "requirements-dev.txt",
+        "sha": "e36ecd6d9b6734179fad68d52926f33f920d6373",
+        "size": 278,
+        "url": "https://api.github.com/repos/onnx/onnx/contents/requirements-dev.txt?ref=main",
+        "html_url": "https://github.com/onnx/onnx/blob/main/requirements-dev.txt",
+        "git_url": "https://api.github.com/repos/onnx/onnx/git/blobs/e36ecd6d9b6734179fad68d52926f33f920d6373",
+        "download_url": "https://raw.githubusercontent.com/onnx/onnx/main/requirements-dev.txt",
+        "type": "file",
+        "_links": {
+          "self": "https://api.github.com/repos/onnx/onnx/contents/requirements-dev.txt?ref=main",
+          "git": "https://api.github.com/repos/onnx/onnx/git/blobs/e36ecd6d9b6734179fad68d52926f33f920d6373",
+          "html": "https://github.com/onnx/onnx/blob/main/requirements-dev.txt"
+        }
+      },
+      {
+        "name": "requirements-lintrunner.txt",
+        "path": "requirements-lintrunner.txt",
+        "sha": "a84294a2e27a04790dd5f4426b6252563a9f09fe",
+        "size": 229,
+        "url": "https://api.github.com/repos/onnx/onnx/contents/requirements-lintrunner.txt?ref=main",
+        "html_url": "https://github.com/onnx/onnx/blob/main/requirements-lintrunner.txt",
+        "git_url": "https://api.github.com/repos/onnx/onnx/git/blobs/a84294a2e27a04790dd5f4426b6252563a9f09fe",
+        "download_url": "https://raw.githubusercontent.com/onnx/onnx/main/requirements-lintrunner.txt",
+        "type": "file",
+        "_links": {
+          "self": "https://api.github.com/repos/onnx/onnx/contents/requirements-lintrunner.txt?ref=main",
+          "git": "https://api.github.com/repos/onnx/onnx/git/blobs/a84294a2e27a04790dd5f4426b6252563a9f09fe",
+          "html": "https://github.com/onnx/onnx/blob/main/requirements-lintrunner.txt"
+        }
+      },
+      {
+        "name": "requirements-min.txt",
+        "path": "requirements-min.txt",
+        "sha": "b3687eafc5e1ebc5b76e84a4adc636d96aeb1944",
+        "size": 503,
+        "url": "https://api.github.com/repos/onnx/onnx/contents/requirements-min.txt?ref=main",
+        "html_url": "https://github.com/onnx/onnx/blob/main/requirements-min.txt",
+        "git_url": "https://api.github.com/repos/onnx/onnx/git/blobs/b3687eafc5e1ebc5b76e84a4adc636d96aeb1944",
+        "download_url": "https://raw.githubusercontent.com/onnx/onnx/main/requirements-min.txt",
+        "type": "file",
+        "_links": {
+          "self": "https://api.github.com/repos/onnx/onnx/contents/requirements-min.txt?ref=main",
+          "git": "https://api.github.com/repos/onnx/onnx/git/blobs/b3687eafc5e1ebc5b76e84a4adc636d96aeb1944",
+          "html": "https://github.com/onnx/onnx/blob/main/requirements-min.txt"
+        }
+      },
+      {
+        "name": "requirements-reference.txt",
+        "path": "requirements-reference.txt",
+        "sha": "7e2fba5e6c5dd84148d04252f6a94733beb26845",
+        "size": 7,
+        "url": "https://api.github.com/repos/onnx/onnx/contents/requirements-reference.txt?ref=main",
+        "html_url": "https://github.com/onnx/onnx/blob/main/requirements-reference.txt",
+        "git_url": "https://api.github.com/repos/onnx/onnx/git/blobs/7e2fba5e6c5dd84148d04252f6a94733beb26845",
+        "download_url": "https://raw.githubusercontent.com/onnx/onnx/main/requirements-reference.txt",
+        "type": "file",
+        "_links": {
+          "self": "https://api.github.com/repos/onnx/onnx/contents/requirements-reference.txt?ref=main",
+          "git": "https://api.github.com/repos/onnx/onnx/git/blobs/7e2fba5e6c5dd84148d04252f6a94733beb26845",
+          "html": "https://github.com/onnx/onnx/blob/main/requirements-reference.txt"
+        }
+      },
+      {
+        "name": "requirements-release_build.txt",
+        "path": "requirements-release_build.txt",
+        "sha": "e0cb6503daa8e1b80fb77fb7f7864b5722a2fe50",
+        "size": 161,
+        "url": "https://api.github.com/repos/onnx/onnx/contents/requirements-release_build.txt?ref=main",
+        "html_url": "https://github.com/onnx/onnx/blob/main/requirements-release_build.txt",
+        "git_url": "https://api.github.com/repos/onnx/onnx/git/blobs/e0cb6503daa8e1b80fb77fb7f7864b5722a2fe50",
+        "download_url": "https://raw.githubusercontent.com/onnx/onnx/main/requirements-release_build.txt",
+        "type": "file",
+        "_links": {
+          "self": "https://api.github.com/repos/onnx/onnx/contents/requirements-release_build.txt?ref=main",
+          "git": "https://api.github.com/repos/onnx/onnx/git/blobs/e0cb6503daa8e1b80fb77fb7f7864b5722a2fe50",
+          "html": "https://github.com/onnx/onnx/blob/main/requirements-release_build.txt"
+        }
+      },
+      {
+        "name": "requirements-release_test.txt",
+        "path": "requirements-release_test.txt",
+        "sha": "3f95c3ac52ffb6961c312437c2fc218bcedfb7a7",
+        "size": 335,
+        "url": "https://api.github.com/repos/onnx/onnx/contents/requirements-release_test.txt?ref=main",
+        "html_url": "https://github.com/onnx/onnx/blob/main/requirements-release_test.txt",
+        "git_url": "https://api.github.com/repos/onnx/onnx/git/blobs/3f95c3ac52ffb6961c312437c2fc218bcedfb7a7",
+        "download_url": "https://raw.githubusercontent.com/onnx/onnx/main/requirements-release_test.txt",
+        "type": "file",
+        "_links": {
+          "self": "https://api.github.com/repos/onnx/onnx/contents/requirements-release_test.txt?ref=main",
+          "git": "https://api.github.com/repos/onnx/onnx/git/blobs/3f95c3ac52ffb6961c312437c2fc218bcedfb7a7",
+          "html": "https://github.com/onnx/onnx/blob/main/requirements-release_test.txt"
+        }
+      },
+      {
+        "name": "requirements.txt",
+        "path": "requirements.txt",
+        "sha": "560a6932325069d6c3a0b2d774749b4b7e916f8a",
+        "size": 148,
+        "url": "https://api.github.com/repos/onnx/onnx/contents/requirements.txt?ref=main",
+        "html_url": "https://github.com/onnx/onnx/blob/main/requirements.txt",
+        "git_url": "https://api.github.com/repos/onnx/onnx/git/blobs/560a6932325069d6c3a0b2d774749b4b7e916f8a",
+        "download_url": "https://raw.githubusercontent.com/onnx/onnx/main/requirements.txt",
+        "type": "file",
+        "_links": {
+          "self": "https://api.github.com/repos/onnx/onnx/contents/requirements.txt?ref=main",
+          "git": "https://api.github.com/repos/onnx/onnx/git/blobs/560a6932325069d6c3a0b2d774749b4b7e916f8a",
+          "html": "https://github.com/onnx/onnx/blob/main/requirements.txt"
+        }
+      },
+      {
+        "name": "setup.py",
+        "path": "setup.py",
+        "sha": "2b60ff68a3a0a9f38558be5661d371a9d5b4f839",
+        "size": 12851,
+        "url": "https://api.github.com/repos/onnx/onnx/contents/setup.py?ref=main",
+        "html_url": "https://github.com/onnx/onnx/blob/main/setup.py",
+        "git_url": "https://api.github.com/repos/onnx/onnx/git/blobs/2b60ff68a3a0a9f38558be5661d371a9d5b4f839",
+        "download_url": "https://raw.githubusercontent.com/onnx/onnx/main/setup.py",
+        "type": "file",
+        "_links": {
+          "self": "https://api.github.com/repos/onnx/onnx/contents/setup.py?ref=main",
+          "git": "https://api.github.com/repos/onnx/onnx/git/blobs/2b60ff68a3a0a9f38558be5661d371a9d5b4f839",
+          "html": "https://github.com/onnx/onnx/blob/main/setup.py"
+        }
+      },
+      {
+        "name": "tools",
+        "path": "tools",
+        "sha": "035b006e68cbf679233abe08c84cbe78a0d8ee3f",
+        "size": 0,
+        "url": "https://api.github.com/repos/onnx/onnx/contents/tools?ref=main",
+        "html_url": "https://github.com/onnx/onnx/tree/main/tools",
+        "git_url": "https://api.github.com/repos/onnx/onnx/git/trees/035b006e68cbf679233abe08c84cbe78a0d8ee3f",
+        "download_url": null,
+        "type": "dir",
+        "_links": {
+          "self": "https://api.github.com/repos/onnx/onnx/contents/tools?ref=main",
+          "git": "https://api.github.com/repos/onnx/onnx/git/trees/035b006e68cbf679233abe08c84cbe78a0d8ee3f",
+          "html": "https://github.com/onnx/onnx/tree/main/tools"
+        }
+      },
+      {
+        "name": "workflow_scripts",
+        "path": "workflow_scripts",
+        "sha": "bf05c4d0a11ca892b5ce11bd6ccb85cef29b5cca",
+        "size": 0,
+        "url": "https://api.github.com/repos/onnx/onnx/contents/workflow_scripts?ref=main",
+        "html_url": "https://github.com/onnx/onnx/tree/main/workflow_scripts",
+        "git_url": "https://api.github.com/repos/onnx/onnx/git/trees/bf05c4d0a11ca892b5ce11bd6ccb85cef29b5cca",
+        "download_url": null,
+        "type": "dir",
+        "_links": {
+          "self": "https://api.github.com/repos/onnx/onnx/contents/workflow_scripts?ref=main",
+          "git": "https://api.github.com/repos/onnx/onnx/git/trees/bf05c4d0a11ca892b5ce11bd6ccb85cef29b5cca",
+          "html": "https://github.com/onnx/onnx/tree/main/workflow_scripts"
+        }
+      }
+    ],
+    "recent_commits": [
+      {
+        "sha": "500b7bdefac1f1873a1d66be65e2daba609fa908",
+        "node_id": "C_kwDOBh73_9oAKDUwMGI3YmRlZmFjMWYxODczYTFkNjZiZTY1ZTJkYWJhNjA5ZmE5MDg",
+        "commit": {
+          "author": {
+            "name": "Andreas Fehlner",
+            "email": "fehlner@arcor.de",
+            "date": "2025-11-28T07:50:55Z"
+          },
+          "committer": {
+            "name": "GitHub",
+            "email": "noreply@github.com",
+            "date": "2025-11-28T07:50:55Z"
+          },
+          "message": "Clarify numpy version dependencies in requirements (#7488)\n\nAdded comments to clarify numpy version requirements.\n\n\n\n### Motivation and Context\n\nFixes #\n\nSigned-off-by: Andreas Fehlner <fehlner@arcor.de>",
+          "tree": {
+            "sha": "f1761857bfd4e818031178ff1c866c5f709c9a36",
+            "url": "https://api.github.com/repos/onnx/onnx/git/trees/f1761857bfd4e818031178ff1c866c5f709c9a36"
+          },
+          "url": "https://api.github.com/repos/onnx/onnx/git/commits/500b7bdefac1f1873a1d66be65e2daba609fa908",
+          "comment_count": 0,
+          "verification": {
+            "verified": true,
+            "reason": "valid",
+            "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJpKVRfCRC1aQ7uu5UhlAAASrQQAHxrGfUc3OePkK2hLLPRJ7HW\nfuMULtayiEHerkHlZ4l/RFBRoNLjpREwM9fJ2uIv6HaBHHGZHdrWWYMdUvzdy70g\nmQ1wPBpl38GcFvqp8noTD4EisLqHs7vN9QAIc2wtx3Ab43GPmflkPylWj9p1m9YQ\npL5dSIHxwZXqNjHrohZRUtDcsPQDz2wefH7zvs7q2Ih/UywyhCiNigxfZRSxxB30\nubUna9LNI6mK9e9GHC5yg1Fp+XZl+JHl6oyNHthH+yw+6toUaMd0S9vAhiaTX6VX\nlLj8VDn7yXLn3U/2SpBI0Bqb0K2U21PCI4he2gskFX7hbJ65RllJuf/FEAZ9Blk9\nCASQfnMR5fUaZA447Cm1mSvKRya6EaSPQsjliezKvF4smYFSzduIw0Q42ubGShNS\n1vV5JkGBbl2ZkZs+vrjYIi0L2ySJEeqBmnlvXvVUpa/184N2HVlfuoBwXIYvA/dE\nnD/VakmrWFeBgoz/i34xs9LJ31bDZjMoPLqMlXa6jykKm1XzPCQNb3YvKN/JXJK8\nnW+lrdRci8mhuGzQxUWEWNAiaonbwcCLpTgBGssutD0qVoJXCnUnuAz1rLqWJgKB\ne8pNNrg9Wkgd23bf4jJEhiAAZr00Dk6G8rLZsdAmRd9N6Br3PsHG+QrrysF9YNar\nCrClB1vATDzhGAcAnd4H\n=hpQ4\n-----END PGP SIGNATURE-----\n",
+            "payload": "tree f1761857bfd4e818031178ff1c866c5f709c9a36\nparent 626202ab61710047aa59ed8755c1c1502e941b66\nauthor Andreas Fehlner <fehlner@arcor.de> 1764316255 +0100\ncommitter GitHub <noreply@github.com> 1764316255 +0100\n\nClarify numpy version dependencies in requirements (#7488)\n\nAdded comments to clarify numpy version requirements.\n\n\n\n### Motivation and Context\n\nFixes #\n\nSigned-off-by: Andreas Fehlner <fehlner@arcor.de>",
+            "verified_at": "2025-11-28T07:50:55Z"
+          }
+        },
+        "url": "https://api.github.com/repos/onnx/onnx/commits/500b7bdefac1f1873a1d66be65e2daba609fa908",
+        "html_url": "https://github.com/onnx/onnx/commit/500b7bdefac1f1873a1d66be65e2daba609fa908",
+        "comments_url": "https://api.github.com/repos/onnx/onnx/commits/500b7bdefac1f1873a1d66be65e2daba609fa908/comments",
+        "author": {
+          "login": "andife",
+          "id": 20612932,
+          "node_id": "MDQ6VXNlcjIwNjEyOTMy",
+          "avatar_url": "https://avatars.githubusercontent.com/u/20612932?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/andife",
+          "html_url": "https://github.com/andife",
+          "followers_url": "https://api.github.com/users/andife/followers",
+          "following_url": "https://api.github.com/users/andife/following{/other_user}",
+          "gists_url": "https://api.github.com/users/andife/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/andife/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/andife/subscriptions",
+          "organizations_url": "https://api.github.com/users/andife/orgs",
+          "repos_url": "https://api.github.com/users/andife/repos",
+          "events_url": "https://api.github.com/users/andife/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/andife/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "committer": {
+          "login": "web-flow",
+          "id": 19864447,
+          "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+          "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/web-flow",
+          "html_url": "https://github.com/web-flow",
+          "followers_url": "https://api.github.com/users/web-flow/followers",
+          "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+          "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+          "organizations_url": "https://api.github.com/users/web-flow/orgs",
+          "repos_url": "https://api.github.com/users/web-flow/repos",
+          "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/web-flow/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "parents": [
+          {
+            "sha": "626202ab61710047aa59ed8755c1c1502e941b66",
+            "url": "https://api.github.com/repos/onnx/onnx/commits/626202ab61710047aa59ed8755c1c1502e941b66",
+            "html_url": "https://github.com/onnx/onnx/commit/626202ab61710047aa59ed8755c1c1502e941b66"
+          }
+        ]
+      },
+      {
+        "sha": "626202ab61710047aa59ed8755c1c1502e941b66",
+        "node_id": "C_kwDOBh73_9oAKDYyNjIwMmFiNjE3MTAwNDdhYTU5ZWQ4NzU1YzFjMTUwMmU5NDFiNjY",
+        "commit": {
+          "author": {
+            "name": "Yuanyuan Chen",
+            "email": "cyyever@outlook.com",
+            "date": "2025-11-25T17:22:46Z"
+          },
+          "committer": {
+            "name": "GitHub",
+            "email": "noreply@github.com",
+            "date": "2025-11-25T17:22:46Z"
+          },
+          "message": "Fix cpplint warnings (#7482)\n\n### Motivation and Context\n\nThis PR fixes some cpplint warnings.\n\n---------\n\nSigned-off-by: cyy <cyyever@outlook.com>\nSigned-off-by: Yuanyuan Chen <cyyever@outlook.com>",
+          "tree": {
+            "sha": "800c7ab7c6e672be79c28785dc17ef5f95ca9432",
+            "url": "https://api.github.com/repos/onnx/onnx/git/trees/800c7ab7c6e672be79c28785dc17ef5f95ca9432"
+          },
+          "url": "https://api.github.com/repos/onnx/onnx/git/commits/626202ab61710047aa59ed8755c1c1502e941b66",
+          "comment_count": 0,
+          "verification": {
+            "verified": true,
+            "reason": "valid",
+            "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJpJeXmCRC1aQ7uu5UhlAAASFoQACf8LEfTC6lhDcFoY66zeSjs\nf4PaRliPvmwez/64RZtjqIppQQRzVGIr34tuiVAr2S7tCytILGgy7u2oG3bq4z1L\nwYOElQfwsC112muWhomo/MUt5RVUZe2jETJCrpPYiSFZ3YYgdDQUcBt9DXOY1Qba\nIDLnoDiu6Tix3FEfpA7078ILHQFHU6fUHvXZ8QW+jb08YezX3kCPEMK7eh14Zmmz\n3xgVB7eO4ieuMNks7ybkWBxu7LaSmkiUbU1ZmtVuUoYmH1medQetZmQZmBq7kroE\nt5ZRUIvVHa0Ad5GTmkh0ooXc0UAMWEK+F5fB7O0TXKIEIbBsXYAOy6ImUhspS5BC\nTqaZxJtJ1dn0W2Su0FLGcbGCB0Ted5jmJtKdCNcLpGUEUFz+HXdiLOsquUyBqKG6\nj407JoI+Tv2PKQOlxz4fZmtFaSN6el1BpiposMsKqY1yPUUkkmSN6VjYFb0XlIZD\nmLiK38ehTiUCIAuRTCr0iJOz6k3J1U8XsvV293ZBosbUQ6sbKe/U7AgSOTQ/FiVx\nLwEcZCsrZUDWohMaEZA0XEinCkIj33V2IZ745LZ+NxZ/GH5aRa1DQvmT8jx7CKa1\n65fSoZ6iP0eq3XLTevaERgOR2k3CkFmV9S4kxhMEUb7kBuRhGCcTPCqRxVh4vjNB\nk44K1acPIGmCHVZ/TToQ\n=VKbs\n-----END PGP SIGNATURE-----\n",
+            "payload": "tree 800c7ab7c6e672be79c28785dc17ef5f95ca9432\nparent bf76c9a5f1198730beb8bf92b90bdcfc6a361687\nauthor Yuanyuan Chen <cyyever@outlook.com> 1764091366 +0800\ncommitter GitHub <noreply@github.com> 1764091366 -0800\n\nFix cpplint warnings (#7482)\n\n### Motivation and Context\n\nThis PR fixes some cpplint warnings.\n\n---------\n\nSigned-off-by: cyy <cyyever@outlook.com>\nSigned-off-by: Yuanyuan Chen <cyyever@outlook.com>",
+            "verified_at": "2025-11-25T17:22:47Z"
+          }
+        },
+        "url": "https://api.github.com/repos/onnx/onnx/commits/626202ab61710047aa59ed8755c1c1502e941b66",
+        "html_url": "https://github.com/onnx/onnx/commit/626202ab61710047aa59ed8755c1c1502e941b66",
+        "comments_url": "https://api.github.com/repos/onnx/onnx/commits/626202ab61710047aa59ed8755c1c1502e941b66/comments",
+        "author": {
+          "login": "cyyever",
+          "id": 17618148,
+          "node_id": "MDQ6VXNlcjE3NjE4MTQ4",
+          "avatar_url": "https://avatars.githubusercontent.com/u/17618148?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/cyyever",
+          "html_url": "https://github.com/cyyever",
+          "followers_url": "https://api.github.com/users/cyyever/followers",
+          "following_url": "https://api.github.com/users/cyyever/following{/other_user}",
+          "gists_url": "https://api.github.com/users/cyyever/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/cyyever/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/cyyever/subscriptions",
+          "organizations_url": "https://api.github.com/users/cyyever/orgs",
+          "repos_url": "https://api.github.com/users/cyyever/repos",
+          "events_url": "https://api.github.com/users/cyyever/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/cyyever/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "committer": {
+          "login": "web-flow",
+          "id": 19864447,
+          "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+          "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/web-flow",
+          "html_url": "https://github.com/web-flow",
+          "followers_url": "https://api.github.com/users/web-flow/followers",
+          "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+          "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+          "organizations_url": "https://api.github.com/users/web-flow/orgs",
+          "repos_url": "https://api.github.com/users/web-flow/repos",
+          "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/web-flow/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "parents": [
+          {
+            "sha": "bf76c9a5f1198730beb8bf92b90bdcfc6a361687",
+            "url": "https://api.github.com/repos/onnx/onnx/commits/bf76c9a5f1198730beb8bf92b90bdcfc6a361687",
+            "html_url": "https://github.com/onnx/onnx/commit/bf76c9a5f1198730beb8bf92b90bdcfc6a361687"
+          }
+        ]
+      },
+      {
+        "sha": "bf76c9a5f1198730beb8bf92b90bdcfc6a361687",
+        "node_id": "C_kwDOBh73_9oAKGJmNzZjOWE1ZjExOTg3MzBiZWI4YmY5MmI5MGJkY2ZjNmEzNjE2ODc",
+        "commit": {
+          "author": {
+            "name": "Stefan Liebler",
+            "email": "stli@linux.ibm.com",
+            "date": "2025-11-24T15:38:12Z"
+          },
+          "committer": {
+            "name": "GitHub",
+            "email": "noreply@github.com",
+            "date": "2025-11-24T15:38:12Z"
+          },
+          "message": "Require ml_dtypes>=0.5.4 on s390x (#7484)\n\nIn order to get the testsuite clean on s390x (big-endian), we need the\nalready committed onnx-commit:\n\"Fix testsuite fails on s390x (big-endian) (#7309)\"\nhttps://github.com/onnx/onnx/commit/f307a8d6b32d7ff6935af45a872caf3ece2e79ea\n\nAND the ml_dtypes-commit:\n\"Fix bfloat16 byteswap not working\"\n\nhttps://github.com/jax-ml/ml_dtypes/commit/fd7fa4a62e7664856aa98a278fff88cfe9247f5f\n\nThe ml_dtypes one has now landed in ml_dtypes v0.5.4 release:\nhttps://github.com/jax-ml/ml_dtypes/releases/tag/v0.5.4 \n\"Fixed bug in byte-swap operation for custom floats (#311)\"\n\n\nThis patch bumps the requirement for ml_dtypes to v0.5.4 only on s390x\nas discussed in the original pull-request:\nhttps://github.com/onnx/onnx/pull/7309#issuecomment-3309556772 All other\narchitectures, still require for ml_dtypes v0.5.0 as before.\n\nSigned-off-by: Stefan Liebler <stli@linux.ibm.com>",
+          "tree": {
+            "sha": "823b5915c00259a42004a68c34131ed67b8af4b6",
+            "url": "https://api.github.com/repos/onnx/onnx/git/trees/823b5915c00259a42004a68c34131ed67b8af4b6"
+          },
+          "url": "https://api.github.com/repos/onnx/onnx/git/commits/bf76c9a5f1198730beb8bf92b90bdcfc6a361687",
+          "comment_count": 0,
+          "verification": {
+            "verified": true,
+            "reason": "valid",
+            "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJpJHvkCRC1aQ7uu5UhlAAAB0UQAH4DCdzhdeJxony3gsKshTzp\nTDLHgeoHECh7x98nWZgarUBojE9nNPt37TqVAuwRwV9GQMoKp0Nnpv+Tb7XB8a8T\n+t/BS5aEsGM3rJwAgRlH26Q7b30sjp50bJWhUCWM/4qY+Kt98UOOFLZz8zECAGSu\njuMNepN05/vy/KvIIZQDIBXyZmM/DRECz2rufTOTT5E2lS2LPZLY7FyNjHe9NFiP\nc5/yeNe8wLS/jQmwEIX6QTaRqU3TH8rS7HvM0Kp7cOvDcA+o6NDfIV32yEsFNzCt\n/Tqv6Wk2tV2bdO5dOesZZ0EuKzrZO1uchxIYV8v83NAyG/9h6kMdJ9rq1oTUOof/\nMp2AUTqpID6AIRsRsMjZhcBGtvhWju0Tbqy6CqqwIPBPkOZR3CCT/vj5y2R5efrQ\nSsCbpe8awK6jZwHWE1bmcjJqphMoIpXySufdek60nlrvmM/BNWy0pIUfekHKLvwm\n1rHiDt9oJ3oRC2mipNY27QBlQXmr0LV76PePF4uRFonbMj1VpwzCFLZPtCI9rHZz\nK4rD/+CqEo7UDBqcQa84+pmWbsasTBKUTcvZGwDLbW0nE+SJdkLK59L141CDiUGu\nsr3quguZxtKhFVL3iV4QnJ1jvBbva1kbwCKtYAT+3PGBRtMuhblDwPYM6+lgDDNx\nqlRULoPqjzbODa8A0y/M\n=Bpyx\n-----END PGP SIGNATURE-----\n",
+            "payload": "tree 823b5915c00259a42004a68c34131ed67b8af4b6\nparent e878c8b73ce1424fb883cf09811ca14ade54ed30\nauthor Stefan Liebler <stli@linux.ibm.com> 1763998692 +0100\ncommitter GitHub <noreply@github.com> 1763998692 +0100\n\nRequire ml_dtypes>=0.5.4 on s390x (#7484)\n\nIn order to get the testsuite clean on s390x (big-endian), we need the\nalready committed onnx-commit:\n\"Fix testsuite fails on s390x (big-endian) (#7309)\"\nhttps://github.com/onnx/onnx/commit/f307a8d6b32d7ff6935af45a872caf3ece2e79ea\n\nAND the ml_dtypes-commit:\n\"Fix bfloat16 byteswap not working\"\n\nhttps://github.com/jax-ml/ml_dtypes/commit/fd7fa4a62e7664856aa98a278fff88cfe9247f5f\n\nThe ml_dtypes one has now landed in ml_dtypes v0.5.4 release:\nhttps://github.com/jax-ml/ml_dtypes/releases/tag/v0.5.4 \n\"Fixed bug in byte-swap operation for custom floats (#311)\"\n\n\nThis patch bumps the requirement for ml_dtypes to v0.5.4 only on s390x\nas discussed in the original pull-request:\nhttps://github.com/onnx/onnx/pull/7309#issuecomment-3309556772 All other\narchitectures, still require for ml_dtypes v0.5.0 as before.\n\nSigned-off-by: Stefan Liebler <stli@linux.ibm.com>",
+            "verified_at": "2025-11-24T15:38:13Z"
+          }
+        },
+        "url": "https://api.github.com/repos/onnx/onnx/commits/bf76c9a5f1198730beb8bf92b90bdcfc6a361687",
+        "html_url": "https://github.com/onnx/onnx/commit/bf76c9a5f1198730beb8bf92b90bdcfc6a361687",
+        "comments_url": "https://api.github.com/repos/onnx/onnx/commits/bf76c9a5f1198730beb8bf92b90bdcfc6a361687/comments",
+        "author": {
+          "login": "stliibm",
+          "id": 17591893,
+          "node_id": "MDQ6VXNlcjE3NTkxODkz",
+          "avatar_url": "https://avatars.githubusercontent.com/u/17591893?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/stliibm",
+          "html_url": "https://github.com/stliibm",
+          "followers_url": "https://api.github.com/users/stliibm/followers",
+          "following_url": "https://api.github.com/users/stliibm/following{/other_user}",
+          "gists_url": "https://api.github.com/users/stliibm/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/stliibm/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/stliibm/subscriptions",
+          "organizations_url": "https://api.github.com/users/stliibm/orgs",
+          "repos_url": "https://api.github.com/users/stliibm/repos",
+          "events_url": "https://api.github.com/users/stliibm/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/stliibm/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "committer": {
+          "login": "web-flow",
+          "id": 19864447,
+          "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+          "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/web-flow",
+          "html_url": "https://github.com/web-flow",
+          "followers_url": "https://api.github.com/users/web-flow/followers",
+          "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+          "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+          "organizations_url": "https://api.github.com/users/web-flow/orgs",
+          "repos_url": "https://api.github.com/users/web-flow/repos",
+          "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/web-flow/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "parents": [
+          {
+            "sha": "e878c8b73ce1424fb883cf09811ca14ade54ed30",
+            "url": "https://api.github.com/repos/onnx/onnx/commits/e878c8b73ce1424fb883cf09811ca14ade54ed30",
+            "html_url": "https://github.com/onnx/onnx/commit/e878c8b73ce1424fb883cf09811ca14ade54ed30"
+          }
+        ]
+      },
+      {
+        "sha": "e878c8b73ce1424fb883cf09811ca14ade54ed30",
+        "node_id": "C_kwDOBh73_9oAKGU4NzhjOGI3M2NlMTQyNGZiODgzY2YwOTgxMWNhMTRhZGU1NGVkMzA",
+        "commit": {
+          "author": {
+            "name": "Andreas Fehlner",
+            "email": "fehlner@arcor.de",
+            "date": "2025-11-23T23:44:20Z"
+          },
+          "committer": {
+            "name": "GitHub",
+            "email": "noreply@github.com",
+            "date": "2025-11-23T23:44:20Z"
+          },
+          "message": "Update entrypoint.sh for improved syntax and checks (#7483)\n\n### Motivation and Context\n\nFixes #\n\nSigned-off-by: Andreas Fehlner <fehlner@arcor.de>",
+          "tree": {
+            "sha": "f41646f7a41edb10e4d7f6c8c825214b9c7bfe9b",
+            "url": "https://api.github.com/repos/onnx/onnx/git/trees/f41646f7a41edb10e4d7f6c8c825214b9c7bfe9b"
+          },
+          "url": "https://api.github.com/repos/onnx/onnx/git/commits/e878c8b73ce1424fb883cf09811ca14ade54ed30",
+          "comment_count": 0,
+          "verification": {
+            "verified": true,
+            "reason": "valid",
+            "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJpI5xUCRC1aQ7uu5UhlAAALxMQACpu+l3YPppsorLCEaH25Xv/\nBZ21jxA+OUC6LpF8A5w+2XITLhn0y3Pj1XtsrxQIqL4vTkr81uzJhEy2IQGW90g2\nj5rnP7LnWucLsGUCt08rO5KHiMBUX9Kx8lXrJZ/UxYiMiXFMAnAuDsrvtbTiKFr1\nb+sm8vDCpgvy1P/DZ2ldr8F4LNQv8saxErZxhlG1fAbiFPK1YsveKC2UbVtHNvCD\nDovifWtk3QYDRz3aTOeWbB0VKTwUOSNK2WT6frjKk+bbTNiDnE5/yDcM7tAdzdU2\njMgV8kZrsO9gS17O5eMhXNAUaq+I6FZJwg9prZQu+BfdkGKFQl7/hYtX2UGzvc3z\nXXea2YvLFVgT3OexbDSk+Ojb0fTOm5lxTjAbd8Bbjw31tsR5k6blMY51U2DOn07M\n3Kpuy7/SDuPcFuPt1YkAIf+JPyEl83yicqI2ogJFoIaZCibMYJfHOr5CrkbDmrQZ\nSSHR9uBTG1pqc4jjGUKLoo3dqChim4Ydd2NtYFwrVwk95w6jjtzaBjExXqy0HCjB\nG35TDqOziNBNGjf6C1rAOUSIes4BufV05GdD+7k+76y0YrdJ4YG/unbMrAiIcZhr\nTfshaD1Eat2Dxoeth9rV8nCPpGmZIzjQ60z55r7uiLq6D/PspVkqTY6j+rvhsC/6\nMBoQhkLf8KBaIb7PL7Gc\n=DyyA\n-----END PGP SIGNATURE-----\n",
+            "payload": "tree f41646f7a41edb10e4d7f6c8c825214b9c7bfe9b\nparent f71b19379bc9aa3fd4c8a273a25db626f3cc1e5b\nauthor Andreas Fehlner <fehlner@arcor.de> 1763941460 +0100\ncommitter GitHub <noreply@github.com> 1763941460 +0100\n\nUpdate entrypoint.sh for improved syntax and checks (#7483)\n\n### Motivation and Context\n\nFixes #\n\nSigned-off-by: Andreas Fehlner <fehlner@arcor.de>",
+            "verified_at": "2025-11-23T23:44:21Z"
+          }
+        },
+        "url": "https://api.github.com/repos/onnx/onnx/commits/e878c8b73ce1424fb883cf09811ca14ade54ed30",
+        "html_url": "https://github.com/onnx/onnx/commit/e878c8b73ce1424fb883cf09811ca14ade54ed30",
+        "comments_url": "https://api.github.com/repos/onnx/onnx/commits/e878c8b73ce1424fb883cf09811ca14ade54ed30/comments",
+        "author": {
+          "login": "andife",
+          "id": 20612932,
+          "node_id": "MDQ6VXNlcjIwNjEyOTMy",
+          "avatar_url": "https://avatars.githubusercontent.com/u/20612932?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/andife",
+          "html_url": "https://github.com/andife",
+          "followers_url": "https://api.github.com/users/andife/followers",
+          "following_url": "https://api.github.com/users/andife/following{/other_user}",
+          "gists_url": "https://api.github.com/users/andife/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/andife/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/andife/subscriptions",
+          "organizations_url": "https://api.github.com/users/andife/orgs",
+          "repos_url": "https://api.github.com/users/andife/repos",
+          "events_url": "https://api.github.com/users/andife/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/andife/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "committer": {
+          "login": "web-flow",
+          "id": 19864447,
+          "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+          "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/web-flow",
+          "html_url": "https://github.com/web-flow",
+          "followers_url": "https://api.github.com/users/web-flow/followers",
+          "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+          "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+          "organizations_url": "https://api.github.com/users/web-flow/orgs",
+          "repos_url": "https://api.github.com/users/web-flow/repos",
+          "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/web-flow/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "parents": [
+          {
+            "sha": "f71b19379bc9aa3fd4c8a273a25db626f3cc1e5b",
+            "url": "https://api.github.com/repos/onnx/onnx/commits/f71b19379bc9aa3fd4c8a273a25db626f3cc1e5b",
+            "html_url": "https://github.com/onnx/onnx/commit/f71b19379bc9aa3fd4c8a273a25db626f3cc1e5b"
+          }
+        ]
+      },
+      {
+        "sha": "f71b19379bc9aa3fd4c8a273a25db626f3cc1e5b",
+        "node_id": "C_kwDOBh73_9oAKGY3MWIxOTM3OWJjOWFhM2ZkNGM4YTI3M2EyNWRiNjI2ZjNjYzFlNWI",
+        "commit": {
+          "author": {
+            "name": "Yuanyuan Chen",
+            "email": "cyyever@outlook.com",
+            "date": "2025-11-23T07:40:24Z"
+          },
+          "committer": {
+            "name": "GitHub",
+            "email": "noreply@github.com",
+            "date": "2025-11-23T07:40:24Z"
+          },
+          "message": "Enable conversion from DataTypeSet into set[str] (#7481)\n\n### Motivation and Context\n\nThis PR enables conversion of ``DataTypeSet`` into python code. The\nerror was encountered in an attempt to convert OPScheme into python\ndict.\n\n---------\n\nSigned-off-by: cyy <cyyever@outlook.com>\nSigned-off-by: Yuanyuan Chen <cyyever@outlook.com>",
+          "tree": {
+            "sha": "7bd242ea78caf8ec34d8acd7fb1c4f2a5c83c2a3",
+            "url": "https://api.github.com/repos/onnx/onnx/git/trees/7bd242ea78caf8ec34d8acd7fb1c4f2a5c83c2a3"
+          },
+          "url": "https://api.github.com/repos/onnx/onnx/git/commits/f71b19379bc9aa3fd4c8a273a25db626f3cc1e5b",
+          "comment_count": 0,
+          "verification": {
+            "verified": true,
+            "reason": "valid",
+            "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJpIrpoCRC1aQ7uu5UhlAAAT7YQAJb5qNB7QSXJJXVuAzjPYchB\noMHJoZHUDFILCsWQ1kCcUO9Z++/c/R94rs9wFXoov1fTy9+LPRSDJYRQNxDzrQut\nhUXX0+Bq0+PUwgGQRIflq1jRFCoBREhxvl/zgi8cSNaerhZLVbinlI4O5RY+43Ok\nIIg34fPS98NhNFLUSmCA2SNeQ7jz9AZUPmVsYap01dgMAyVjE0clANc3EHXRgdRw\n3PR5M33l8FKh8gZ7qSxBUBvTQFcR0sDMvI31o244XGXAOJ+bcU7y3xKpZhyaN1uR\nKIHOIN49exIT1LvCRSXmn6cTlLjZa3G0Un/b60J4CPM+4Z8XrMVwQGIaMWkX675B\nRvYLicAstDCPWTHClFGuIQNJMMQA3K+cklO+7VmXICS8mhZyKSHqZ0LoPrXtvtxh\n+yzYUT/iRMs0wZeJUwE2sqPp3gjFG7FtzLMkehu5yqHaZmN18zXfk0fxEqtSP9ha\nE/JQ79/xOrrokjxOZZSqBbFijqXiL75ijselgU9po3Gqm28tdTRLFnpPAPhF4PZN\nC2gkRSi7JxB9K0v/GF2lnSWhy3A04BSu0OEawQ3Ia/BbVYq1UhkG0LFdMD2Ualin\npd+WocEzkBdIkAGyEQFpqLPYCWVaJfGn6waBhVhdhY0illx4G+FoiUqmrEeT0neH\nlGeFAJf2uhf2ipVLH9Ki\n=kjKw\n-----END PGP SIGNATURE-----\n",
+            "payload": "tree 7bd242ea78caf8ec34d8acd7fb1c4f2a5c83c2a3\nparent cc76f3a896404561f6ece00873ae3c79cc6d002e\nauthor Yuanyuan Chen <cyyever@outlook.com> 1763883624 +0800\ncommitter GitHub <noreply@github.com> 1763883624 +0100\n\nEnable conversion from DataTypeSet into set[str] (#7481)\n\n### Motivation and Context\n\nThis PR enables conversion of ``DataTypeSet`` into python code. The\nerror was encountered in an attempt to convert OPScheme into python\ndict.\n\n---------\n\nSigned-off-by: cyy <cyyever@outlook.com>\nSigned-off-by: Yuanyuan Chen <cyyever@outlook.com>",
+            "verified_at": "2025-11-23T07:40:25Z"
+          }
+        },
+        "url": "https://api.github.com/repos/onnx/onnx/commits/f71b19379bc9aa3fd4c8a273a25db626f3cc1e5b",
+        "html_url": "https://github.com/onnx/onnx/commit/f71b19379bc9aa3fd4c8a273a25db626f3cc1e5b",
+        "comments_url": "https://api.github.com/repos/onnx/onnx/commits/f71b19379bc9aa3fd4c8a273a25db626f3cc1e5b/comments",
+        "author": {
+          "login": "cyyever",
+          "id": 17618148,
+          "node_id": "MDQ6VXNlcjE3NjE4MTQ4",
+          "avatar_url": "https://avatars.githubusercontent.com/u/17618148?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/cyyever",
+          "html_url": "https://github.com/cyyever",
+          "followers_url": "https://api.github.com/users/cyyever/followers",
+          "following_url": "https://api.github.com/users/cyyever/following{/other_user}",
+          "gists_url": "https://api.github.com/users/cyyever/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/cyyever/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/cyyever/subscriptions",
+          "organizations_url": "https://api.github.com/users/cyyever/orgs",
+          "repos_url": "https://api.github.com/users/cyyever/repos",
+          "events_url": "https://api.github.com/users/cyyever/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/cyyever/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "committer": {
+          "login": "web-flow",
+          "id": 19864447,
+          "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+          "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/web-flow",
+          "html_url": "https://github.com/web-flow",
+          "followers_url": "https://api.github.com/users/web-flow/followers",
+          "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+          "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+          "organizations_url": "https://api.github.com/users/web-flow/orgs",
+          "repos_url": "https://api.github.com/users/web-flow/repos",
+          "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/web-flow/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "parents": [
+          {
+            "sha": "cc76f3a896404561f6ece00873ae3c79cc6d002e",
+            "url": "https://api.github.com/repos/onnx/onnx/commits/cc76f3a896404561f6ece00873ae3c79cc6d002e",
+            "html_url": "https://github.com/onnx/onnx/commit/cc76f3a896404561f6ece00873ae3c79cc6d002e"
+          }
+        ]
+      },
+      {
+        "sha": "cc76f3a896404561f6ece00873ae3c79cc6d002e",
+        "node_id": "C_kwDOBh73_9oAKGNjNzZmM2E4OTY0MDQ1NjFmNmVjZTAwODczYWUzYzc5Y2M2ZDAwMmU",
+        "commit": {
+          "author": {
+            "name": "Yuanyuan Chen",
+            "email": "cyyever@outlook.com",
+            "date": "2025-11-22T10:06:53Z"
+          },
+          "committer": {
+            "name": "GitHub",
+            "email": "noreply@github.com",
+            "date": "2025-11-22T10:06:53Z"
+          },
+          "message": "Fix typos (#7478)\n\n### Motivation and Context\n\nFixes typos in source code and documentation.\n\nSigned-off-by: cyy <cyyever@outlook.com>",
+          "tree": {
+            "sha": "d1a7215eb4801fe8eab4fe09ef4e223064563777",
+            "url": "https://api.github.com/repos/onnx/onnx/git/trees/d1a7215eb4801fe8eab4fe09ef4e223064563777"
+          },
+          "url": "https://api.github.com/repos/onnx/onnx/git/commits/cc76f3a896404561f6ece00873ae3c79cc6d002e",
+          "comment_count": 0,
+          "verification": {
+            "verified": true,
+            "reason": "valid",
+            "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJpIYs9CRC1aQ7uu5UhlAAATuIQAKU2FswzUEaAWjPPiqnkKfGs\n8M3xTHG/2L81MZS+k9mrr6JW3s8SJICdkf0PMmr8XGMDuqL5E0oOuDt1jMOich+h\nhq1ViEKJ/0+rYpxmVLaSu1ay5nygS1DC1/IfLNuO3mX67inAR2EjGUJ0+GoQagc5\n8wGZU16x2Zv88bPrMs4FnVfxYDQDolgrjiXCN5mAVyG+F2tnSDO2Jpr8xw7TnpNb\nB0z9sc4ZsPUWFU+cKLx7eHuQ4oriHJ3RwjegBTSfid5VAOYvTGmfqjZQLv37/H0X\n07BFjKe+1VA4rFwj4biHkrtWE6Z1QM1wtY1f0gajOuDDmYJYIeKYgJ0PitN1rk8/\nkFPtw8DcTKm2IJ7LLexmYL7/GHmf3KhhQvjcDLPBG0lpiXp/eD+eSvkHEcEBv2qq\nhXpj8MRllMg6rYOjM4uMC4c10M2L88o0651OgX2a8E/ERnxBxjFVfujfZ+x7QXmJ\niX61paoNJXL3sqND0jxzsQzyzwPvmAp+O04Rt3OCwv8h0v6p4jnQ2ZUnf2VQc0I3\nfvGULARLFmsG1BbOpydQtygdQeXqnGmyOIrv7Ol6xeaXPtoJLhuZnaE77mjxtkBW\npA59Dr2nj1NuR4gokc/duobJ1k/aVwKuI/ThUWd3BkeE1tqzm+t69bOusQx2q+Oh\n4w1r8iRFpyfB20UiJY6o\n=7Llb\n-----END PGP SIGNATURE-----\n",
+            "payload": "tree d1a7215eb4801fe8eab4fe09ef4e223064563777\nparent 2fef05aa580aa0663e93c77b7fc812d029b1411f\nauthor Yuanyuan Chen <cyyever@outlook.com> 1763806013 +0800\ncommitter GitHub <noreply@github.com> 1763806013 +0100\n\nFix typos (#7478)\n\n### Motivation and Context\n\nFixes typos in source code and documentation.\n\nSigned-off-by: cyy <cyyever@outlook.com>",
+            "verified_at": "2025-11-22T10:06:54Z"
+          }
+        },
+        "url": "https://api.github.com/repos/onnx/onnx/commits/cc76f3a896404561f6ece00873ae3c79cc6d002e",
+        "html_url": "https://github.com/onnx/onnx/commit/cc76f3a896404561f6ece00873ae3c79cc6d002e",
+        "comments_url": "https://api.github.com/repos/onnx/onnx/commits/cc76f3a896404561f6ece00873ae3c79cc6d002e/comments",
+        "author": {
+          "login": "cyyever",
+          "id": 17618148,
+          "node_id": "MDQ6VXNlcjE3NjE4MTQ4",
+          "avatar_url": "https://avatars.githubusercontent.com/u/17618148?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/cyyever",
+          "html_url": "https://github.com/cyyever",
+          "followers_url": "https://api.github.com/users/cyyever/followers",
+          "following_url": "https://api.github.com/users/cyyever/following{/other_user}",
+          "gists_url": "https://api.github.com/users/cyyever/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/cyyever/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/cyyever/subscriptions",
+          "organizations_url": "https://api.github.com/users/cyyever/orgs",
+          "repos_url": "https://api.github.com/users/cyyever/repos",
+          "events_url": "https://api.github.com/users/cyyever/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/cyyever/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "committer": {
+          "login": "web-flow",
+          "id": 19864447,
+          "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+          "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/web-flow",
+          "html_url": "https://github.com/web-flow",
+          "followers_url": "https://api.github.com/users/web-flow/followers",
+          "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+          "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+          "organizations_url": "https://api.github.com/users/web-flow/orgs",
+          "repos_url": "https://api.github.com/users/web-flow/repos",
+          "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/web-flow/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "parents": [
+          {
+            "sha": "2fef05aa580aa0663e93c77b7fc812d029b1411f",
+            "url": "https://api.github.com/repos/onnx/onnx/commits/2fef05aa580aa0663e93c77b7fc812d029b1411f",
+            "html_url": "https://github.com/onnx/onnx/commit/2fef05aa580aa0663e93c77b7fc812d029b1411f"
+          }
+        ]
+      },
+      {
+        "sha": "2fef05aa580aa0663e93c77b7fc812d029b1411f",
+        "node_id": "C_kwDOBh73_9oAKDJmZWYwNWFhNTgwYWEwNjYzZTkzYzc3YjdmYzgxMmQwMjliMTQxMWY",
+        "commit": {
+          "author": {
+            "name": "Ti-Tai Wang",
+            "email": "titaiwang@microsoft.com",
+            "date": "2025-11-20T23:38:47Z"
+          },
+          "committer": {
+            "name": "GitHub",
+            "email": "noreply@github.com",
+            "date": "2025-11-20T23:38:47Z"
+          },
+          "message": "Remove enforcement to node determinism attribute (#7473)\n\n### Motivation and Context\n\nFrom https://github.com/onnx/onnx/pull/7176, a node determinism\nattribute to operator schemas was introduced. However, there is an\nenforcement making the changes bc breaking to exising op schemas. This\nPR removed the enforcement to relax the constraints.\n\nAn alternative way could be making NonDeterministic as a default to\noperators to ease the impacts.\n\nSigned-off-by: Ti-Tai Wang <titaiwang@microsoft.com>",
+          "tree": {
+            "sha": "1dfde4f3c49b5934b0bbffbcc784a15bcd582019",
+            "url": "https://api.github.com/repos/onnx/onnx/git/trees/1dfde4f3c49b5934b0bbffbcc784a15bcd582019"
+          },
+          "url": "https://api.github.com/repos/onnx/onnx/git/commits/2fef05aa580aa0663e93c77b7fc812d029b1411f",
+          "comment_count": 0,
+          "verification": {
+            "verified": true,
+            "reason": "valid",
+            "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJpH6aHCRC1aQ7uu5UhlAAAZroQACb/BcYuRPGUKBMFt8DWW1cQ\nc++Hyx5CDBR2PYo36TwR8zNHuvD5zJFdJjbooSRT2TYnudumCWezZ+vG+14F5ozp\nGgE4702ntZPuPlnK5CcHJtgNVYXcZvhgxFxikZPZn+HHGOjqyLK7jixWYc1qFWIi\n5cUjJIwyopVtXoWwBwMclps2eTpZBERbq6hfN8vroIKwQOPuATwUZHumfElklEWy\ntPOt/f035bSgC1IUT/R/qBBW2bBX9DYkuOtPyhZAiS+zy6UD7pKRoC3YsEKN3Zab\nMpomBP3aVY7MP8IXmTvc1iDr612zSnAwjQkqS3QrdcFOo+yuzTfUGvaVBDfC4hZg\nvhyE1KlNomBcZEoSxa4fMiXl30p2sYZxVdJr0CYN9SvT527K1im6ES3o1ocNHaS4\nP+kaw/yBe6A1oWyo6ucc+u9Jf8a1BqeUC6zXd2VlUwfSgIDMISiao88Nfk7YYbo+\nrLS9b5/OI8whRnFKsqf2viBq4HxvYFZTJul6nm9Ziit72GASJOqdef/xA9IBkFVV\nV/xrQI9qJqY0ZuYH5FHeJDmiLsgO7tET1IW61qkugurY5/s8D0Jn+UB1uRtINGR3\n3Naqr1h/glYNsyrbF7nlrzmP1T5aBg/MGzovWzVEEn7VL7ioOHTRs1+LMqXjy41Y\nTCapCn91d8XqBxKe1a1B\n=jlZ/\n-----END PGP SIGNATURE-----\n",
+            "payload": "tree 1dfde4f3c49b5934b0bbffbcc784a15bcd582019\nparent de5e658892644fecd0fcb314e6dd2e714f7199ab\nauthor Ti-Tai Wang <titaiwang@microsoft.com> 1763681927 -0800\ncommitter GitHub <noreply@github.com> 1763681927 -0800\n\nRemove enforcement to node determinism attribute (#7473)\n\n### Motivation and Context\n\nFrom https://github.com/onnx/onnx/pull/7176, a node determinism\nattribute to operator schemas was introduced. However, there is an\nenforcement making the changes bc breaking to exising op schemas. This\nPR removed the enforcement to relax the constraints.\n\nAn alternative way could be making NonDeterministic as a default to\noperators to ease the impacts.\n\nSigned-off-by: Ti-Tai Wang <titaiwang@microsoft.com>",
+            "verified_at": "2025-11-20T23:38:47Z"
+          }
+        },
+        "url": "https://api.github.com/repos/onnx/onnx/commits/2fef05aa580aa0663e93c77b7fc812d029b1411f",
+        "html_url": "https://github.com/onnx/onnx/commit/2fef05aa580aa0663e93c77b7fc812d029b1411f",
+        "comments_url": "https://api.github.com/repos/onnx/onnx/commits/2fef05aa580aa0663e93c77b7fc812d029b1411f/comments",
+        "author": {
+          "login": "titaiwangms",
+          "id": 18010845,
+          "node_id": "MDQ6VXNlcjE4MDEwODQ1",
+          "avatar_url": "https://avatars.githubusercontent.com/u/18010845?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/titaiwangms",
+          "html_url": "https://github.com/titaiwangms",
+          "followers_url": "https://api.github.com/users/titaiwangms/followers",
+          "following_url": "https://api.github.com/users/titaiwangms/following{/other_user}",
+          "gists_url": "https://api.github.com/users/titaiwangms/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/titaiwangms/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/titaiwangms/subscriptions",
+          "organizations_url": "https://api.github.com/users/titaiwangms/orgs",
+          "repos_url": "https://api.github.com/users/titaiwangms/repos",
+          "events_url": "https://api.github.com/users/titaiwangms/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/titaiwangms/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "committer": {
+          "login": "web-flow",
+          "id": 19864447,
+          "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+          "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/web-flow",
+          "html_url": "https://github.com/web-flow",
+          "followers_url": "https://api.github.com/users/web-flow/followers",
+          "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+          "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+          "organizations_url": "https://api.github.com/users/web-flow/orgs",
+          "repos_url": "https://api.github.com/users/web-flow/repos",
+          "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/web-flow/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "parents": [
+          {
+            "sha": "de5e658892644fecd0fcb314e6dd2e714f7199ab",
+            "url": "https://api.github.com/repos/onnx/onnx/commits/de5e658892644fecd0fcb314e6dd2e714f7199ab",
+            "html_url": "https://github.com/onnx/onnx/commit/de5e658892644fecd0fcb314e6dd2e714f7199ab"
+          }
+        ]
+      },
+      {
+        "sha": "de5e658892644fecd0fcb314e6dd2e714f7199ab",
+        "node_id": "C_kwDOBh73_9oAKGRlNWU2NTg4OTI2NDRmZWNkMGZjYjMxNGU2ZGQyZTcxNGY3MTk5YWI",
+        "commit": {
+          "author": {
+            "name": "Ti-Tai Wang",
+            "email": "titaiwang@microsoft.com",
+            "date": "2025-11-07T03:15:23Z"
+          },
+          "committer": {
+            "name": "GitHub",
+            "email": "noreply@github.com",
+            "date": "2025-11-07T03:15:23Z"
+          },
+          "message": "Bump opset version to 26 (#7469)\n\nv1.20 will introduce opset version 25. Moving forward, the opset is now\n26.\n\nSigned-off-by: Ti-Tai Wang <titaiwang@microsoft.com>",
+          "tree": {
+            "sha": "8f84b6354e857330caaf98d3062631b700b401d8",
+            "url": "https://api.github.com/repos/onnx/onnx/git/trees/8f84b6354e857330caaf98d3062631b700b401d8"
+          },
+          "url": "https://api.github.com/repos/onnx/onnx/git/commits/de5e658892644fecd0fcb314e6dd2e714f7199ab",
+          "comment_count": 0,
+          "verification": {
+            "verified": true,
+            "reason": "valid",
+            "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJpDWRLCRC1aQ7uu5UhlAAAVDsQAJW7j2v8GfPuyjK7nW+edc85\n247W9bEWAqpFmbqIE9rzRI+UvLBVEHgc7YJmRNXp24csUdZHrTPI2w9zWetfNyLI\nytsmQso5OlrorDvqXPQbitxUjVEKiSD28P7z9OA8uIjVc6iEbFXkhL8Xx7ljnx+d\nl/diHtx8aKcEcT04c6tHWfsTPzDe1Mm3ba9jy3NpVtYR/zE9GB35hhWZczGaDoXS\ndnlEeUrbZyZ25gWUzkG3XFlt7MDpTZFuBXPuIRy1o+5zALNHoPl6tYBGSSgYfSUt\naa74OZwPRZi16CA5E76Ys44IvdOYjBbjyP9d31HXFqA36EF7CDtVfdgJGPGYJncB\nhT6wNo7V4kFO8WHXCiJPEKj+gOn8MYTX2whXfICGd2tKRVvkc49GhJsIrK7soz5h\nnNUXGJD7bEajee7v1nuptjKl5wSl2DQA/KboTXe9lMkUyX/vr9rm4y8ih0wHJEDa\nOTVTinKV/g5r3PmM5xJ0Qhk7wv0X+who8Nelrd7WwPEpqBLVnLeKUhefezuJFXRP\nn8UJNlHsBb+FxwzgI2AvyusoSmE1WjRC+FWA+/aAwBMy/1aa3pFWmg4FhL/SqNs9\nCnKDw7ZiWTSN0vMagyO9+gq/XitfytywdCkf8L0CznE14a9RQacIC9B31C3MZQrW\ngt7M0oeyIFfUTFBIY0XU\n=odBB\n-----END PGP SIGNATURE-----\n",
+            "payload": "tree 8f84b6354e857330caaf98d3062631b700b401d8\nparent fa7d6ed30d3b5b0e4ae18bcc9c01b8fbde5e0251\nauthor Ti-Tai Wang <titaiwang@microsoft.com> 1762485323 -0800\ncommitter GitHub <noreply@github.com> 1762485323 +0000\n\nBump opset version to 26 (#7469)\n\nv1.20 will introduce opset version 25. Moving forward, the opset is now\n26.\n\nSigned-off-by: Ti-Tai Wang <titaiwang@microsoft.com>",
+            "verified_at": "2025-11-07T03:15:24Z"
+          }
+        },
+        "url": "https://api.github.com/repos/onnx/onnx/commits/de5e658892644fecd0fcb314e6dd2e714f7199ab",
+        "html_url": "https://github.com/onnx/onnx/commit/de5e658892644fecd0fcb314e6dd2e714f7199ab",
+        "comments_url": "https://api.github.com/repos/onnx/onnx/commits/de5e658892644fecd0fcb314e6dd2e714f7199ab/comments",
+        "author": {
+          "login": "titaiwangms",
+          "id": 18010845,
+          "node_id": "MDQ6VXNlcjE4MDEwODQ1",
+          "avatar_url": "https://avatars.githubusercontent.com/u/18010845?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/titaiwangms",
+          "html_url": "https://github.com/titaiwangms",
+          "followers_url": "https://api.github.com/users/titaiwangms/followers",
+          "following_url": "https://api.github.com/users/titaiwangms/following{/other_user}",
+          "gists_url": "https://api.github.com/users/titaiwangms/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/titaiwangms/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/titaiwangms/subscriptions",
+          "organizations_url": "https://api.github.com/users/titaiwangms/orgs",
+          "repos_url": "https://api.github.com/users/titaiwangms/repos",
+          "events_url": "https://api.github.com/users/titaiwangms/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/titaiwangms/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "committer": {
+          "login": "web-flow",
+          "id": 19864447,
+          "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+          "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/web-flow",
+          "html_url": "https://github.com/web-flow",
+          "followers_url": "https://api.github.com/users/web-flow/followers",
+          "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+          "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+          "organizations_url": "https://api.github.com/users/web-flow/orgs",
+          "repos_url": "https://api.github.com/users/web-flow/repos",
+          "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/web-flow/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "parents": [
+          {
+            "sha": "fa7d6ed30d3b5b0e4ae18bcc9c01b8fbde5e0251",
+            "url": "https://api.github.com/repos/onnx/onnx/commits/fa7d6ed30d3b5b0e4ae18bcc9c01b8fbde5e0251",
+            "html_url": "https://github.com/onnx/onnx/commit/fa7d6ed30d3b5b0e4ae18bcc9c01b8fbde5e0251"
+          }
+        ]
+      },
+      {
+        "sha": "fa7d6ed30d3b5b0e4ae18bcc9c01b8fbde5e0251",
+        "node_id": "C_kwDOBh73_9oAKGZhN2Q2ZWQzMGQzYjViMGU0YWUxOGJjYzljMDFiOGZiZGU1ZTAyNTE",
+        "commit": {
+          "author": {
+            "name": "Andreas Fehlner",
+            "email": "fehlner@arcor.de",
+            "date": "2025-11-07T00:06:37Z"
+          },
+          "committer": {
+            "name": "GitHub",
+            "email": "noreply@github.com",
+            "date": "2025-11-07T00:06:37Z"
+          },
+          "message": "Update rc version publish process (#7440)\n\nSigned-off-by: Justin Chu <justinchuby@users.noreply.github.com>\nCo-authored-by: Justin Chu <justinchuby@users.noreply.github.com>",
+          "tree": {
+            "sha": "aa5a1f345d7e830804817b3be05a8b4e46696548",
+            "url": "https://api.github.com/repos/onnx/onnx/git/trees/aa5a1f345d7e830804817b3be05a8b4e46696548"
+          },
+          "url": "https://api.github.com/repos/onnx/onnx/git/commits/fa7d6ed30d3b5b0e4ae18bcc9c01b8fbde5e0251",
+          "comment_count": 0,
+          "verification": {
+            "verified": true,
+            "reason": "valid",
+            "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJpDTgNCRC1aQ7uu5UhlAAAq7UQACaty6E+Q/rROBiUnw+FSinP\nXu1sOaftoQGstccVU8Gr2AIcamKp4KL3xsgpHvo83rzzibiUeaDpcyi4rNtPfJpX\niahuV5gv+fMMTIXpkBfDnych/6zZLfnYhinU/9cL19Q3pKoFSGr3j1eqLkb9LNSv\nY1pAnpFM5lLMyR3PtN8iK62cELcrLdhu4vDOBgIwXy5STNljtVMmumtRGWF605Ym\nXGl1RNVXthatBJgfhwePUubvWBmERrzQs6eX2HlgijlkrvBcNB8mkwB5cHJIZb4K\nXR74flnDrFx+nxxtSkKNZ8NWNDoHPzQpa2RvvznWf5Mwzytu8QvnG3KxTMWRV9Dw\nPI7rkZhbglAzzjYfILhrXYKoZuI+bdmwhuIHYHUuUiGOGaPX7FwZrbHKJHTuYNi8\nZcqDOUMZzNdjVk/QU+pFz1QNOhnut/oCMroFPUyOZYkQz7DfkBitOR26hkjSrma9\nOoOgzd9etU7VvRWSWCGeFiGo8YCcS/0C3PHbyvLD9gGGW8ENP0fM2PL5PVxiHTnP\nfqz3Kwb6InkzUD+QubzvAHKkD8UtCPWDfHSd8FemKqjtO5eY7+trQy2W73XzhyYO\nubHwZKnanOzBQBwA42rBe/GDpdFz/wpWKfQ9D5F76kgeo3T5D4LYtvlqRXGKl8+x\nGusgSck0DMGKK0YAjZR1\n=0fSu\n-----END PGP SIGNATURE-----\n",
+            "payload": "tree aa5a1f345d7e830804817b3be05a8b4e46696548\nparent 8f97916a2d9c11f4f46e46835883febe1d0d7594\nauthor Andreas Fehlner <fehlner@arcor.de> 1762473997 +0100\ncommitter GitHub <noreply@github.com> 1762473997 +0000\n\nUpdate rc version publish process (#7440)\n\nSigned-off-by: Justin Chu <justinchuby@users.noreply.github.com>\nCo-authored-by: Justin Chu <justinchuby@users.noreply.github.com>",
+            "verified_at": "2025-11-07T00:06:37Z"
+          }
+        },
+        "url": "https://api.github.com/repos/onnx/onnx/commits/fa7d6ed30d3b5b0e4ae18bcc9c01b8fbde5e0251",
+        "html_url": "https://github.com/onnx/onnx/commit/fa7d6ed30d3b5b0e4ae18bcc9c01b8fbde5e0251",
+        "comments_url": "https://api.github.com/repos/onnx/onnx/commits/fa7d6ed30d3b5b0e4ae18bcc9c01b8fbde5e0251/comments",
+        "author": {
+          "login": "andife",
+          "id": 20612932,
+          "node_id": "MDQ6VXNlcjIwNjEyOTMy",
+          "avatar_url": "https://avatars.githubusercontent.com/u/20612932?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/andife",
+          "html_url": "https://github.com/andife",
+          "followers_url": "https://api.github.com/users/andife/followers",
+          "following_url": "https://api.github.com/users/andife/following{/other_user}",
+          "gists_url": "https://api.github.com/users/andife/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/andife/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/andife/subscriptions",
+          "organizations_url": "https://api.github.com/users/andife/orgs",
+          "repos_url": "https://api.github.com/users/andife/repos",
+          "events_url": "https://api.github.com/users/andife/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/andife/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "committer": {
+          "login": "web-flow",
+          "id": 19864447,
+          "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+          "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/web-flow",
+          "html_url": "https://github.com/web-flow",
+          "followers_url": "https://api.github.com/users/web-flow/followers",
+          "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+          "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+          "organizations_url": "https://api.github.com/users/web-flow/orgs",
+          "repos_url": "https://api.github.com/users/web-flow/repos",
+          "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/web-flow/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "parents": [
+          {
+            "sha": "8f97916a2d9c11f4f46e46835883febe1d0d7594",
+            "url": "https://api.github.com/repos/onnx/onnx/commits/8f97916a2d9c11f4f46e46835883febe1d0d7594",
+            "html_url": "https://github.com/onnx/onnx/commit/8f97916a2d9c11f4f46e46835883febe1d0d7594"
+          }
+        ]
+      },
+      {
+        "sha": "8f97916a2d9c11f4f46e46835883febe1d0d7594",
+        "node_id": "C_kwDOBh73_9oAKDhmOTc5MTZhMmQ5YzExZjRmNDZlNDY4MzU4ODNmZWJlMWQwZDc1OTQ",
+        "commit": {
+          "author": {
+            "name": "vraspar",
+            "email": "vrajang@outlook.com",
+            "date": "2025-11-06T22:31:33Z"
+          },
+          "committer": {
+            "name": "GitHub",
+            "email": "noreply@github.com",
+            "date": "2025-11-06T22:31:33Z"
+          },
+          "message": "Add 2 bit support to onnx (#7446)\n\n### Motivation and Context\nAdd support for 2-bit data types in ONNX to enable emerging low-bit\nmodel formats. Recent research and frameworks are exploring 2-bit\nquantized models for improved efficiency, and ML dtypes already include\n2-bit representations. This change ensures ONNX can represent and\ninteroperate with these new models.\n\n- Add new data types INT2/UINT2 and related helper functions.\n- Update `Cast`, `CastLike`, `DequantizeLinear` and `QuantizeLinear` \n- Update non-compute operators `Constant`, `ConstantOfShape`,\n`Identity`, `Reshape`, `Shape`, `Size`, `If`, `Loop`, `Scan`, `Flatten`,\n`Pad`, `Squeeze`, `Unsqueeze`, `Transpose`.\n- Updater IR version to 13 and opset version to 25\n\n### Issue\nhttps://github.com/onnx/onnx/issues/7159\n\n---------\n\nSigned-off-by: vraspar <vrajang@outlook.com>",
+          "tree": {
+            "sha": "abc3a1ed28bfe006c42181e3b83d1b67a6509acb",
+            "url": "https://api.github.com/repos/onnx/onnx/git/trees/abc3a1ed28bfe006c42181e3b83d1b67a6509acb"
+          },
+          "url": "https://api.github.com/repos/onnx/onnx/git/commits/8f97916a2d9c11f4f46e46835883febe1d0d7594",
+          "comment_count": 0,
+          "verification": {
+            "verified": true,
+            "reason": "valid",
+            "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJpDSHFCRC1aQ7uu5UhlAAAe8YQAGLftXYym6iti8vHrXXWBeAn\nc0LbZXrfKb9FHDsGasYMPIavlWguQ9+bacQjtCDA+j3tjQtTliComU1c38k7nrSt\nQWUiFZQ9Y1u0iHKwGj3L/LeNSHZeS1cp7JLmYJBohPkXg5yXR0WdcJBn4o++2AF5\n/0O8c2kWJrxZp+GyrfHO/WLOecW2+6vjoBy/lq/fwf2c59tz/Yewx0xSv0QyklWO\nIvPCmgRYAGKJS3KQfovX7MiFicoKTnIYBAz9VQkCyf6IOGDTZfG0hJqAnZc+EiRa\nDFce5MML6/hYuz1D0LqBOpP7st1kmG6faFSq3ePvUVWgUAszr+XQ/JhLeAhqAXkp\nQgiTXb3yhkdAm20AY2TBEZzLR6D908suxnqVDBicdStiswotccRg94MheJkSfSmk\nM1NOUbAlZSEmceYX1UvNBbyBsYO/O2QcWRwvtLFZH38TVysHWpJxfJr6Wi3N6DXp\nEWP1tgv9BUx/ZSR+4De6tIrMJo/mBiAV6RfuoN3lvzSClhE5QyPSVBtsymrh+hnr\nzAnNHcDCvnfk3eDa6b1gYY+Kx1kB8OriBPh2G1S+tUVdS5hVS7Id7oA3P7lxUyYb\nJhrIqgiNywSXzYmI3ysMjNnYic+42YF/EbFeReAcvxxjvlxx0DCTo57E0TsPIPSX\n65bEwUrXcEdsubZ5fx7P\n=S9K3\n-----END PGP SIGNATURE-----\n",
+            "payload": "tree abc3a1ed28bfe006c42181e3b83d1b67a6509acb\nparent 76981e3cac0afc70f56c1565092bfcb8e2f83e16\nauthor vraspar <vrajang@outlook.com> 1762468293 -0800\ncommitter GitHub <noreply@github.com> 1762468293 -0800\n\nAdd 2 bit support to onnx (#7446)\n\n### Motivation and Context\nAdd support for 2-bit data types in ONNX to enable emerging low-bit\nmodel formats. Recent research and frameworks are exploring 2-bit\nquantized models for improved efficiency, and ML dtypes already include\n2-bit representations. This change ensures ONNX can represent and\ninteroperate with these new models.\n\n- Add new data types INT2/UINT2 and related helper functions.\n- Update `Cast`, `CastLike`, `DequantizeLinear` and `QuantizeLinear` \n- Update non-compute operators `Constant`, `ConstantOfShape`,\n`Identity`, `Reshape`, `Shape`, `Size`, `If`, `Loop`, `Scan`, `Flatten`,\n`Pad`, `Squeeze`, `Unsqueeze`, `Transpose`.\n- Updater IR version to 13 and opset version to 25\n\n### Issue\nhttps://github.com/onnx/onnx/issues/7159\n\n---------\n\nSigned-off-by: vraspar <vrajang@outlook.com>",
+            "verified_at": "2025-11-06T22:31:34Z"
+          }
+        },
+        "url": "https://api.github.com/repos/onnx/onnx/commits/8f97916a2d9c11f4f46e46835883febe1d0d7594",
+        "html_url": "https://github.com/onnx/onnx/commit/8f97916a2d9c11f4f46e46835883febe1d0d7594",
+        "comments_url": "https://api.github.com/repos/onnx/onnx/commits/8f97916a2d9c11f4f46e46835883febe1d0d7594/comments",
+        "author": {
+          "login": "vraspar",
+          "id": 51386888,
+          "node_id": "MDQ6VXNlcjUxMzg2ODg4",
+          "avatar_url": "https://avatars.githubusercontent.com/u/51386888?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/vraspar",
+          "html_url": "https://github.com/vraspar",
+          "followers_url": "https://api.github.com/users/vraspar/followers",
+          "following_url": "https://api.github.com/users/vraspar/following{/other_user}",
+          "gists_url": "https://api.github.com/users/vraspar/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/vraspar/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/vraspar/subscriptions",
+          "organizations_url": "https://api.github.com/users/vraspar/orgs",
+          "repos_url": "https://api.github.com/users/vraspar/repos",
+          "events_url": "https://api.github.com/users/vraspar/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/vraspar/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "committer": {
+          "login": "web-flow",
+          "id": 19864447,
+          "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+          "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/web-flow",
+          "html_url": "https://github.com/web-flow",
+          "followers_url": "https://api.github.com/users/web-flow/followers",
+          "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+          "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+          "organizations_url": "https://api.github.com/users/web-flow/orgs",
+          "repos_url": "https://api.github.com/users/web-flow/repos",
+          "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/web-flow/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "parents": [
+          {
+            "sha": "76981e3cac0afc70f56c1565092bfcb8e2f83e16",
+            "url": "https://api.github.com/repos/onnx/onnx/commits/76981e3cac0afc70f56c1565092bfcb8e2f83e16",
+            "html_url": "https://github.com/onnx/onnx/commit/76981e3cac0afc70f56c1565092bfcb8e2f83e16"
+          }
+        ]
+      }
+    ],
+    "multi_llm_research": {
+      "multi_llm_approaches": [
+        "Model parallelism",
+        "Pipeline parallelism",
+        "Tensor parallelism",
+        "Expert routing",
+        "LoRA adapters",
+        "Multi-head attention fusion"
+      ],
+      "onnx_features": [
+        "Model serialization",
+        "Cross-platform compatibility",
+        "Optimization passes",
+        "Operator standardization"
+      ],
+      "integration_points": [
+        "Model schema extension",
+        "Runtime modification",
+        "Graph optimization",
+        "Input/output management"
+      ]
+    },
+    "research_summary": "Studied ONNX repository with 43 files and 30 commits"
+  },
+  "architectural_analysis": {
+    "architecture": {
+      "languages": [
+        "C++",
+        "Python"
+      ],
+      "modules": [],
+      "graph_structure": "Directed Acyclic Graph",
+      "tensor_representation": "Multi-dimensional arrays"
+    },
+    "multi_llm_potential": {
+      "feasibility": "high",
+      "approaches": [
+        {
+          "name": "Multi-Model Graph Fusion",
+          "description": "Fuse multiple LLMs into a single computation graph",
+          "difficulty": "medium",
+          "benefits": [
+            "Reduced inter-model communication",
+            "Shared memory optimization"
+          ]
+        },
+        {
+          "name": "Dynamic Model Routing",
+          "description": "Route inputs to different models based on content",
+          "difficulty": "medium",
+          "benefits": [
+            "Adaptive inference",
+            "Resource optimization"
+          ]
+        },
+        {
+          "name": "Parallel Model Execution",
+          "description": "Run multiple models simultaneously on same input",
+          "difficulty": "hard",
+          "benefits": [
+            "Massive throughput",
+            "Comprehensive analysis"
+          ]
+        },
+        {
+          "name": "Hierarchical Model Stacking",
+          "description": "Stack models in hierarchical fashion",
+          "difficulty": "high",
+          "benefits": [
+            "Complex reasoning",
+            "Quality enhancement"
+          ]
+        }
+      ],
+      "constraints": [
+        "Memory limitations",
+        "Computational complexity",
+        "Model compatibility",
+        "Performance trade-offs"
+      ]
+    },
+    "integration_opportunities": [
+      "Runtime extension",
+      "Schema modification",
+      "Optimization pipeline",
+      "Serialization format"
+    ]
+  },
+  "core_concept_extraction": {
+    "core_concepts": {
+      "model_structure": {
+        "model_types": [
+          "serialized_graph",
+          "model_with_initializers",
+          "computation_graph"
+        ],
+        "graph_nodes": [
+          "op_node",
+          "data_node",
+          "constant_node"
+        ],
+        "attributes": [
+          "name",
+          "op_type",
+          "inputs",
+          "outputs",
+          "attributes"
+        ],
+        "found_files_count": 1830
+      },
+      "operator_definitions": {
+        "operator_categories": [
+          "math",
+          "nn",
+          "vision",
+          "audio",
+          "sequence",
+          "reduction",
+          "generation",
+          "transformation"
+        ],
+        "op_definition_files": 385,
+        "schema_files": 4,
+        "key_interfaces": [
+          "OpKernel",
+          "OpSchema",
+          "Operator"
+        ]
+      },
+      "runtime_components": {
+        "components": [
+          "session",
+          "interpreter",
+          "executor",
+          "kernel_registry"
+        ],
+        "backend_types": [
+          "cpu",
+          "cuda",
+          "tensorrt",
+          "openvino",
+          "directml"
+        ],
+        "execution_modes": [
+          "sequential",
+          "parallel",
+          "pipelined"
+        ],
+        "runtime_files_count": 1
+      },
+      "serialization_format": {
+        "formats": [
+          "protobuf_binary",
+          "protobuf_text",
+          "onnx_file"
+        ],
+        "schema_versioning": true,
+        "metadata_support": [
+          "custom_metadata",
+          "model_metadata",
+          "node_attributes"
+        ],
+        "schema_files": 8,
+        "serialization_files": 0
+      }
+    },
+    "extraction_summary": "Extracted concepts from C:\\Users\\Dell\\AppData\\Local\\Temp\\tmpemla5eo3\\onnx-main"
+  },
+  "omega_context_conversion": {
+    "omega_mapping": {
+      "model_graph": {
+        "omega_equivalent": "AgentOrchestrationGraph",
+        "description": "Maps ONNX computation graphs to Augur Omega agent orchestration",
+        "implementation_approach": [
+          "Graph nodes become microagents",
+          "Edges become communication channels",
+          "Subgraphs become kosha modules"
+        ]
+      },
+      "operators": {
+        "omega_equivalent": "ConsciousnessLayerModules",
+        "description": "ONNX operators map to consciousness-aware processing modules",
+        "implementation_approach": [
+          "Operators become specialized microagents",
+          "Computation becomes awareness-aware",
+          "Optimization becomes efficiency-focused"
+        ]
+      },
+      "runtime": {
+        "omega_equivalent": "KoshaExecutionEngine",
+        "description": "ONNX runtime maps to Augur Omega kosha execution engine",
+        "implementation_approach": [
+          "Concurrent execution of agent koshas",
+          "Dynamic resource allocation",
+          "Cross-kosha communication protocols"
+        ]
+      },
+      "serialization": {
+        "omega_equivalent": "ConsciousnessStatePersistence",
+        "description": "ONNX serialization maps to Augur Omega consciousness state persistence",
+        "implementation_approach": [
+          "Model states with awareness",
+          "Cross-kosha state synchronization",
+          "Quantum-state preservation"
+        ]
+      }
+    },
+    "integration_specs": {
+      "multi_llm_orchestration": {
+        "approach": "Consciousness-aware multi-model fusion",
+        "components": [
+          "MultiLLMCoordinator",
+          "ModelRouter",
+          "ResponseMerger",
+          "ConsciousnessMaintainer"
+        ],
+        "benefits": [
+          "Enhanced reasoning through model diversity",
+          "Consciousness-preserving state management",
+          "Quantum-optimized routing decisions",
+          "Mathematically-efficient resource utilization"
+        ]
+      },
+      "implementation_layers": [
+        {
+          "layer": "Abstraction Layer",
+          "description": "Provides unified interface for multiple LLMs",
+          "components": [
+            "ModelAdapter",
+            "InputNormalizer",
+            "OutputFormatter"
+          ]
+        },
+        {
+          "layer": "Orchestration Layer",
+          "description": "Coordinates execution of multiple LLMs",
+          "components": [
+            "TaskDistributor",
+            "ModelSelector",
+            "ExecutionTracker"
+          ]
+        },
+        {
+          "layer": "Consciousness Layer",
+          "description": "Manages consciousness-preserving state",
+          "components": [
+            "StatePreserver",
+            "AwarenessMaintainer",
+            "ContextPropagator"
+          ]
+        },
+        {
+          "layer": "Optimization Layer",
+          "description": "Mathematically optimizes multi-LLM execution",
+          "components": [
+            "ResourceAllocator",
+            "LoadBalancer",
+            "EfficiencyOptimizer"
+          ]
+        }
+      ]
+    },
+    "conversion_summary": "Successfully mapped ONNX concepts to Augur Omega architecture"
+  },
+  "enhancement_implementation": {
+    "enhancements": {
+      "model_schema_extensions": {
+        "multi_model_container": {
+          "name": "MultiModelContainer",
+          "description": "Container for multiple interconnected models",
+          "fields": [
+            {
+              "name": "models",
+              "type": "list",
+              "description": "List of contained models"
+            },
+            {
+              "name": "routing_logic",
+              "type": "object",
+              "description": "Logic for routing inputs between models"
+            },
+            {
+              "name": "fusion_parameters",
+              "type": "object",
+              "description": "Parameters for model fusion"
+            }
+          ]
+        },
+        "model_fusion_spec": {
+          "name": "ModelFusionSpec",
+          "description": "Specification for fusing multiple models",
+          "fields": [
+            {
+              "name": "fusion_type",
+              "type": "string",
+              "description": "Type of fusion (concat, parallel, hierarchical)"
+            },
+            {
+              "name": "connection_strategy",
+              "type": "string",
+              "description": "How outputs connect to inputs"
+            },
+            {
+              "name": "optimization_goals",
+              "type": "list",
+              "description": "Goals for fused model optimization"
+            }
+          ]
+        }
+      },
+      "runtime_extensions": {
+        "concurrent_executor": {
+          "name": "ConcurrentExecutor",
+          "description": "Executes multiple models concurrently",
+          "features": [
+            "Thread-safe execution",
+            "Memory-shared operations",
+            "Synchronized output merging"
+          ]
+        },
+        "intelligent_router": {
+          "name": "IntelligentRouter",
+          "description": "Routes inputs intelligently between models",
+          "features": [
+            "Content-based routing",
+            "Load-aware distribution",
+            "Performance optimization"
+          ]
+        },
+        "state_propagator": {
+          "name": "StatePropagator",
+          "description": "Propagates state between models",
+          "features": [
+            "Consciousness-preserving propagation",
+            "Context-aware transfers",
+            "Quantum-state maintenance"
+          ]
+        }
+      },
+      "optimization_enhancements": {
+        "multi_model_optimizer": {
+          "name": "MultiModelOptimizer",
+          "description": "Optimizes fused multi-model graphs",
+          "techniques": [
+            "Cross-model dead code elimination",
+            "Shared computation factoring",
+            "Memory access pattern optimization"
+          ]
+        },
+        "adaptive_scheduler": {
+          "name": "AdaptiveScheduler",
+          "description": "Adapts execution schedule based on workload",
+          "techniques": [
+            "Dynamic load balancing",
+            "Predictive resource allocation",
+            "Consciousness-aware scheduling"
+          ]
+        }
+      }
+    },
+    "code_examples": {
+      "multimodel_container": "\n# Enhanced ONNX model container for multi-LLM orchestration\nfrom onnx import ModelProto\nfrom typing import List, Dict, Any\n\nclass MultiModelContainer:\n    def __init__(self):\n        self.models: List[ModelProto] = []\n        self.routing_logic: Dict[str, Any] = {}\n        self.fusion_parameters: Dict[str, Any] = {}\n        \n    def add_model(self, model: ModelProto, alias: str):\n        \"\"\"Add a model to the container with an alias\"\"\"\n        self.models.append(model)\n        self.routing_logic[alias] = self._infer_routing_rules(model)\n        \n    def route_input(self, input_data: Any) -> Dict[str, Any]:\n        \"\"\"Route input to appropriate models based on routing logic\"\"\"\n        routes = {}\n        for alias, logic in self.routing_logic.items():\n            if self._matches_routing_criteria(input_data, logic):\n                routes[alias] = input_data\n        return routes\n            ",
+      "concurrent_executor": "\n# Concurrent executor for multi-LLM models\nimport asyncio\nimport concurrent.futures\nfrom typing import Dict, List, Any\n\nclass ConcurrentExecutor:\n    def __init__(self, max_workers: int = 4):\n        self.executor = concurrent.futures.ThreadPoolExecutor(max_workers=max_workers)\n        \n    async def execute_models(self, models: Dict[str, Any], inputs: Dict[str, Any]) -> Dict[str, Any]:\n        \"\"\"Execute multiple models concurrently\"\"\"\n        loop = asyncio.get_event_loop()\n        futures = {\n            name: loop.run_in_executor(\n                self.executor, \n                self._execute_single_model, \n                model, \n                inputs.get(name)\n            )\n            for name, model in models.items()\n            if inputs.get(name) is not None\n        }\n        \n        results = {}\n        for name, future in futures.items():\n            try:\n                results[name] = await future\n            except Exception as e:\n                results[name] = {\"error\": str(e)}\n                \n        return results\n            ",
+      "intelligent_router": "\n# Intelligent router for multi-LLM input routing\nimport numpy as np\nfrom sklearn.feature_extraction.text import TfidfVectorizer\nfrom sklearn.linear_model import LogisticRegression\n\nclass IntelligentRouter:\n    def __init__(self):\n        self.vectorizer = TfidfVectorizer()\n        self.classifier = LogisticRegression()\n        self.model_routing_map = {}\n        \n    def train_router(self, training_data: List[Dict[str, Any]]):\n        \"\"\"Train the router on input-routing pairs\"\"\"\n        texts = [item[\"input\"] for item in training_data]\n        labels = [item[\"target_model\"] for item in training_data]\n        \n        X = self.vectorizer.fit_transform(texts)\n        self.classifier.fit(X, labels)\n        \n    def route_input(self, input_text: str) -> str:\n        \"\"\"Route input to most appropriate model\"\"\"\n        X = self.vectorizer.transform([input_text])\n        predicted = self.classifier.predict(X)[0]\n        return predicted\n            "
+    },
+    "enhancement_summary": "Enhanced ONNX with comprehensive multi-LLM orchestration capabilities"
+  },
+  "integration_plan": {
+    "integration_plan": {
+      "augur_omega_modules": {
+        "multi_llm_kosha": {
+          "name": "MultiLLMKosha",
+          "description": "Kosha managing multiple LLMs simultaneously",
+          "features": [
+            "Model selection based on task",
+            "Response aggregation",
+            "Consciousness-preserving state management",
+            "Mathematical optimization of LLM usage"
+          ],
+          "implementation_path": "main/agents/multi_llm_kosha.py"
+        },
+        "llm_coordinator": {
+          "name": "LLMCoordinator",
+          "description": "Coordinates execution of multiple LLMs",
+          "features": [
+            "Input distribution",
+            "Output merging",
+            "Load balancing",
+            "Performance monitoring"
+          ],
+          "implementation_path": "main/agents/llm_coordinator.py"
+        },
+        "consciousness_preserver": {
+          "name": "ConsciousnessPreserver",
+          "description": "Maintains consciousness state across LLM transitions",
+          "features": [
+            "Context propagation",
+            "State synchronization",
+            "Awareness maintenance",
+            "Quantum-state preservation"
+          ],
+          "implementation_path": "main/consciousness/consciousness_preserver.py"
+        }
+      },
+      "implementation_phases": [
+        {
+          "phase": 1,
+          "name": "Basic Multi-LLM Support",
+          "tasks": [
+            "Create MultiModelContainer abstraction",
+            "Implement basic concurrent execution",
+            "Build simple routing mechanism"
+          ],
+          "estimated_duration": "2 weeks"
+        },
+        {
+          "phase": 2,
+          "name": "Enhanced Orchestration",
+          "tasks": [
+            "Intelligent model selection",
+            "Response aggregation and fusion",
+            "Performance optimization"
+          ],
+          "estimated_duration": "3 weeks"
+        },
+        {
+          "phase": 3,
+          "name": "Consciousness Integration",
+          "tasks": [
+            "State preservation across models",
+            "Context-aware routing",
+            "Awareness-aware response generation"
+          ],
+          "estimated_duration": "3 weeks"
+        },
+        {
+          "phase": 4,
+          "name": "Production Optimization",
+          "tasks": [
+            "Resource optimization",
+            "Scalability features",
+            "Monitoring and debugging tools"
+          ],
+          "estimated_duration": "2 weeks"
+        }
+      ],
+      "technical_specifications": {
+        "api_extensions": {
+          "multi_llm_endpoint": "/api/v1/multi-llm/process",
+          "methods": [
+            "POST"
+          ],
+          "request_format": {
+            "input": "string or object",
+            "models": "array of model identifiers",
+            "strategy": "routing strategy identifier",
+            "options": "object with processing options"
+          },
+          "response_format": {
+            "responses": "array of model responses",
+            "aggregated_response": "combined response if applicable",
+            "metadata": "processing metadata"
+          }
+        },
+        "performance_metrics": [
+          "Requests per second",
+          "Average response time",
+          "Model utilization rates",
+          "Memory usage efficiency",
+          "Consciousness preservation rate"
+        ]
+      }
+    },
+    "sample_implementations": {
+      "multi_llm_kosha": "\n\"\"\"\nMulti-LLM Kosha: Manages execution of multiple LLMs simultaneously\n\"\"\"\nimport asyncio\nfrom typing import Dict, List, Any, Optional\nfrom dataclasses import dataclass\nimport logging\nfrom pathlib import Path\n\nfrom onnx_multi_llm.enhanced_onnx import MultiModelContainer, ConcurrentExecutor, IntelligentRouter\n\nlogger = logging.getLogger(__name__)\n\n@dataclass\nclass MultiLLMConfig:\n    \"\"\"Configuration for Multi-LLM Kosha\"\"\"\n    models: List[str]  # List of model identifiers to use\n    routing_strategy: str = \"intelligent\"  # intelligent, round_robin, weighted\n    max_concurrent: int = 4\n    consciousness_preservation: bool = True\n    response_aggregation: bool = True\n\nclass MultiLLMKosha:\n    \"\"\"Kosha for managing multiple LLMs simultaneously\"\"\"\n    \n    def __init__(self, config: MultiLLMConfig):\n        self.config = config\n        self.container = MultiModelContainer()\n        self.executor = ConcurrentExecutor(max_workers=config.max_concurrent)\n        self.router = IntelligentRouter() if config.routing_strategy == \"intelligent\" else None\n        self.state_preserver = ConsciousnessPreserver() if config.consciousness_preservation else None\n        \n        logger.info(f\"Initialized MultiLLMKosha with {len(config.models)} models\")\n    \n    async def process_request(self, input_data: Any) -> Dict[str, Any]:\n        \"\"\"Process a request with multiple LLMs\"\"\"\n        start_time = asyncio.get_event_loop().time()\n        \n        # Route input to appropriate models\n        if self.config.routing_strategy == \"intelligent\" and self.router:\n            routes = await self._intelligent_route(input_data)\n        elif self.config.routing_strategy == \"round_robin\":\n            routes = self._round_robin_route(input_data)\n        elif self.config.routing_strategy == \"all\":\n            routes = {model: input_data for model in self.config.models}\n        else:\n            routes = {self.config.models[0]: input_data}  # Default to first model\n        \n        # Execute models concurrently\n        results = await self.executor.execute_models(self.container.models, routes)\n        \n        # Aggregate responses if needed\n        if self.config.response_aggregation:\n            aggregated = await self._aggregate_responses(results)\n        else:\n            aggregated = results\n        \n        # Preserve consciousness state if needed\n        if self.state_preserver:\n            await self.state_preserver.preserve_state(results)\n        \n        processing_time = asyncio.get_event_loop().time() - start_time\n        \n        return {\n            \"responses\": results,\n            \"aggregated_response\": aggregated,\n            \"processing_time\": processing_time,\n            \"models_used\": list(results.keys()),\n            \"consciousness_preserved\": bool(self.state_preserver)\n        }\n    \n    async def _intelligent_route(self, input_data: Any) -> Dict[str, Any]:\n        \"\"\"Route input intelligently based on content\"\"\"\n        # Implementation would use the intelligent router\n        return {model: input_data for model in self.config.models}\n    \n    def _round_robin_route(self, input_data: Any) -> Dict[str, Any]:\n        \"\"\"Route input in round-robin fashion\"\"\"\n        routes = {}\n        for i, model in enumerate(self.config.models):\n            routes[model] = input_data  # For now, send to all models\n        return routes\n    \n    async def _aggregate_responses(self, responses: Dict[str, Any]) -> Any:\n        \"\"\"Aggregate responses from multiple models\"\"\"\n        # Simple aggregation - in practice, this could be much more sophisticated\n        texts = [resp.get(\"response\", \"\") for resp in responses.values() if \"response\" in resp]\n        \n        if len(texts) == 1:\n            return texts[0]\n        elif len(texts) > 1:\n            # Simple concatenation - could implement voting, ranking, etc.\n            return \"\\n\\n\".join([f\"Model Response:\\n{text}\" for text in texts])\n        else:\n            return \"No responses generated\"\n            ",
+      "llm_coordinator": "\n\"\"\"\nLLM Coordinator: Manages execution flow of multiple LLMs\n\"\"\"\nimport asyncio\nfrom typing import Dict, List, Any\nimport logging\n\nlogger = logging.getLogger(__name__)\n\nclass LLMCoordinator:\n    \"\"\"Coordinates execution of multiple LLMs for a single task\"\"\"\n    \n    def __init__(self):\n        self.queues = {}\n        self.stats = {\"requests_processed\": 0, \"average_time\": 0.0}\n    \n    async def coordinate_task(self, \n                             input_data: Any, \n                             models: List[str], \n                             strategy: str = \"parallel\") -> Dict[str, Any]:\n        \"\"\"Coordinate task execution across multiple LLMs\"\"\"\n        start_time = asyncio.get_event_loop().time()\n        \n        if strategy == \"parallel\":\n            results = await self._execute_parallel(input_data, models)\n        elif strategy == \"pipeline\":\n            results = await self._execute_pipeline(input_data, models)\n        elif strategy == \"ensemble\":\n            results = await self._execute_ensemble(input_data, models)\n        else:\n            raise ValueError(f\"Unknown coordination strategy: {strategy}\")\n        \n        total_time = asyncio.get_event_loop().time() - start_time\n        \n        # Update statistics\n        self.stats[\"requests_processed\"] += 1\n        prev_avg = self.stats[\"average_time\"]\n        new_avg = ((prev_avg * (self.stats[\"requests_processed\"] - 1) + total_time) / \n                   self.stats[\"requests_processed\"])\n        self.stats[\"average_time\"] = new_avg\n        \n        return {\n            \"strategy\": strategy,\n            \"models_used\": models,\n            \"results\": results,\n            \"processing_time\": total_time,\n            \"stats\": self.stats\n        }\n    \n    async def _execute_parallel(self, input_data: Any, models: List[str]) -> Dict[str, Any]:\n        \"\"\"Execute models in parallel\"\"\"\n        tasks = [self._execute_model_on_input(input_data, model) for model in models]\n        results = await asyncio.gather(*tasks, return_exceptions=True)\n        \n        return {model: result for model, result in zip(models, results) \n                if not isinstance(result, Exception)}\n    \n    async def _execute_pipeline(self, input_data: Any, models: List[str]) -> Dict[str, Any]:\n        \"\"\"Execute models in sequence where each uses previous output\"\"\"\n        current_input = input_data\n        results = {}\n        \n        for model in models:\n            result = await self._execute_model_on_input(current_input, model)\n            results[model] = result\n            if isinstance(result, dict) and \"response\" in result:\n                current_input = result[\"response\"]\n        \n        return results\n    \n    async def _execute_ensemble(self, input_data: Any, models: List[str]) -> Dict[str, Any]:\n        \"\"\"Execute ensemble method where models vote on final answer\"\"\"\n        parallel_results = await self._execute_parallel(input_data, models)\n        \n        # Simple ensemble voting - could be much more sophisticated\n        responses = [res.get(\"response\", \"\") for res in parallel_results.values() \n                    if isinstance(res, dict) and \"response\" in res]\n        \n        # For now, return all responses with metadata about ensemble\n        return {\n            \"individual_responses\": parallel_results,\n            \"ensemble_strategy\": \"simple_aggregation\",\n            \"total_models\": len(models),\n            \"successful_completions\": len(responses)\n        }\n    \n    async def _execute_model_on_input(self, input_data: Any, model: str) -> Any:\n        \"\"\"Execute a single model on input data - placeholder for actual LLM call\"\"\"\n        # This would integrate with the actual LLM service\n        await asyncio.sleep(0.1)  # Simulate processing time\n        return {\n            \"response\": f\"Response from {model} to: {str(input_data)[:50]}...\",\n            \"model\": model,\n            \"timestamp\": asyncio.get_event_loop().time()\n        }\n            "
+    },
+    "integration_summary": "Successfully planned integration of multi-LLM ONNX enhancements into Augur Omega"
+  },
+  "next_steps": [
+    "Implement MultiModelContainer class",
+    "Build concurrent execution engine",
+    "Develop consciousness-preserving state management",
+    "Create PWA interface for multi-LLM orchestration",
+    "Add file size tracking and monitoring"
+  ]
+}

@@ -1,0 +1,280 @@
+# Build configurations for all platforms
+
+# Windows build script
+[build_system]
+name = "augur-omega-builder"
+version = "1.0.0"
+
+[windows]
+build_script = "scripts/build_windows.py"
+output_dir = "builds/windows"
+targets = ["exe", "msi", "zip"]
+requirements = [
+    "pyinstaller>=5.0",
+    "cx_freeze",
+    "nsis"
+]
+
+[macos]
+build_script = "scripts/build_macos.py"
+output_dir = "builds/macos"
+targets = ["app", "pkg", "dmg"]
+requirements = [
+    "py2app",
+    "pyinstaller>=5.0"
+]
+
+[linux]
+build_script = "scripts/build_linux.py"
+output_dir = "builds/linux"
+targets = ["deb", "rpm", "tar.gz", "flatpak", "snap"]
+requirements = [
+    "pyinstaller>=5.0",
+    "fpm"
+]
+
+[android]
+build_script = "scripts/build_android.py"
+output_dir = "builds/android"
+targets = ["apk", "aab"]
+requirements = [
+    "buildozer",
+    "kivy",
+    "p4a"
+]
+
+[ios]
+build_script = "scripts/build_ios.py"
+output_dir = "builds/ios"
+targets = ["ipa"]
+requirements = [
+    "kivy-ios",
+    "xcodebuild"
+]
+
+[desktop]
+build_script = "scripts/build_desktop.py"
+output_dir = "builds/desktop"
+targets = ["tauri", "electron"]
+requirements = [
+    "tauri-cli",
+    "electron",
+    "npm"
+]
+
+[tui_cli]
+build_script = "scripts/build_tui_cli.py"
+output_dir = "builds/tui_cli"
+targets = ["cli", "tui"]
+requirements = [
+    "rich",
+    "click",
+    "inquirer"
+]
+
+[web]
+build_script = "scripts/build_web.py"
+output_dir = "builds/web"
+targets = ["pwa", "spa"]
+requirements = [
+    "fastapi",
+    "uvicorn",
+    "websockets"
+]
+
+[build_dependencies]
+python_version = ">=3.9"
+core_deps = [
+    "litestar",
+    "pydantic",
+    "sqlalchemy",
+    "asyncpg",
+    "redis",
+    "aiohttp",
+    "scipy",
+    "numpy",
+    "pydantic",
+    "fastapi", 
+    "uvicorn",
+    "websockets",
+    "click",
+    "rich",
+    "inquirer",
+    "aiofiles"
+]
+
+[build_scripts]
+windows_builder = '''
+import PyInstaller.__main__
+import os
+import shutil
+
+def build_windows():
+    # Build main application
+    PyInstaller.__main__.run([
+        "main.py",
+        "--onefile",
+        "--windowed", 
+        "--name=AugurOmega",
+        "--add-data=assets;assets/",
+        "--add-data=config;config/",
+        "--hidden-import=litestar",
+        "--hidden-import=pydantic",
+        "--hidden-import=sqlalchemy",
+        "--distpath=builds/windows/"
+    ])
+    
+    # Create installer
+    create_installer()
+
+def create_installer():
+    # NSIS installer creation
+    nsis_script = """
+    !define PRODUCT_NAME "Augur Omega"
+    !define PRODUCT_VERSION "1.0.0"
+    !define PRODUCT_PUBLISHER "Augur Omega AI"
+    !define PRODUCT_DIR_REGKEY "Software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Uninstall\\\\${PRODUCT_NAME}"
+    !define PRODUCT_UNINST_KEY "Software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Uninstall\\\\AugurOmega"
+    !define PRODUCT_UNINST_ROOT_KEY "HKCU"
+    
+    SetCompressor /SOLID lzma
+    
+    Name "${PRODUCT_NAME} ${PRODUCT_VERSION}"
+    OutFile "builds\\\\windows\\\\AugurOmega-${PRODUCT_VERSION}-setup.exe"
+    InstallDir $PROGRAMFILES\\\\AugurOmega
+    InstallDirRegKey HKCU "${PRODUCT_UNINST_KEY}" ""
+    ShowInstDetails show
+    ShowUninstDetails show
+    
+    Section "AugurOmega" SEC01
+        SetOutPath "$INSTDIR"
+        File /r "builds\\\\windows\\\\AugurOmega\\\\*.*"
+        CreateShortCut "$SMPROGRAMS\\\\AugurOmega.lnk" "$INSTDIR\\\\AugurOmega.exe"
+        CreateShortCut "$DESKTOP\\\\AugurOmega.lnk" "$INSTDIR\\\\AugurOmega.exe"
+    SectionEnd
+    """
+    
+    with open("installer.nsi", "w") as f:
+        f.write(nsis_script)
+    
+    # Compile NSIS installer
+    os.system("makensis installer.nsi")
+
+if __name__ == "__main__":
+    build_windows()
+'''
+
+macos_builder = '''
+import os
+import subprocess
+
+def build_macos():
+    # Using py2app for macOS
+    setup_py_content = """
+from setuptools import setup
+import py2app
+
+setup(
+    app=['main.py'],
+    name='Augur Omega',
+    data_files=[],
+    setup_requires=['py2app'],
+    options={
+        'py2app': {
+            'argv_emulation': True,
+            'packages': ['litestar', 'pydantic', 'sqlalchemy'],
+            'iconfile': 'assets/icon.icns',
+            'plist': {
+                'CFBundleName': 'Augur Omega',
+                'CFBundleDisplayName': 'Augur Omega AI Platform',
+                'CFBundleGetInfoString': 'Augur Omega AI Platform',
+                'CFBundleIdentifier': 'com.augromega.platform',
+                'CFBundleVersion': '1.0.0',
+                'CFBundleShortVersionString': '1.0.0',
+                'NSAppleScriptEnabled': True,
+                'NSMainNibFile': 'MainMenu.nib',
+                'NSPrincipalClass': 'NSApplication',
+            }
+        }
+    }
+)
+"""
+    
+    with open("setup.py", "w") as f:
+        f.write(setup_py_content)
+    
+    subprocess.run(["python", "setup.py", "py2app", "-A"])
+'''
+
+linux_builder = '''
+import os
+import subprocess
+
+def build_linux():
+    # Build with PyInstaller
+    subprocess.run([
+        "pyinstaller", 
+        "main.py",
+        "--onefile",
+        "--windowed",
+        "--name=AugurOmega",
+        f"--distpath=builds/linux/"
+    ])
+    
+    # Create .deb package
+    create_deb_package()
+    
+    # Create .rpm package  
+    create_rpm_package()
+
+def create_deb_package():
+    import os
+    import shutil
+    
+    # Create debian package structure
+    os.makedirs("builds/linux/deb/DEBIAN", exist_ok=True)
+    os.makedirs("builds/linux/deb/usr/local/bin", exist_ok=True)
+    os.makedirs("builds/linux/deb/usr/share/applications", exist_ok=True)
+    os.makedirs("builds/linux/deb/usr/share/icons/hicolor/256x256/apps", exist_ok=True)
+    
+    # Copy application
+    shutil.copy("builds/linux/AugurOmega", "builds/linux/deb/usr/local/bin/")
+    
+    # Create control file
+    control_content = """Package: augur-omega
+Version: 1.0.0
+Section: utils
+Priority: optional
+Architecture: amd64
+Depends: python3, python3-pip
+Maintainer: Augur Omega AI
+Description: Advanced AI Business Automation Platform
+ Advanced AI-powered business automation platform with consciousness integration and quantum optimization.
+"""
+    
+    with open("builds/linux/deb/DEBIAN/control", "w") as f:
+        f.write(control_content)
+    
+    # Create desktop entry
+    desktop_content = """[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Augur Omega
+Comment=AI Business Automation Platform
+Exec=/usr/local/bin/AugurOmega
+Icon=/usr/share/icons/hicolor/256x256/apps/augur-omega.png
+Terminal=false
+Categories=Utility;
+"""
+    
+    with open("builds/linux/deb/usr/share/applications/augur-omega.desktop", "w") as f:
+        f.write(desktop_content)
+    
+    # Build .deb package
+    subprocess.run([
+        "dpkg-deb", 
+        "--build", 
+        "builds/linux/deb/", 
+        f"builds/linux/augur-omega_1.0.0_amd64.deb"
+    ])
+'''

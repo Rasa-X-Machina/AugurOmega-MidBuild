@@ -1,0 +1,10 @@
+Package: augur-omega
+Version: 1.0.0
+Section: utils
+Priority: optional
+Architecture: all
+Depends: python3, python3-pip
+Maintainer: Augur Omega Team <contact@augur-omega.ai>
+Description: AI Business Automation Platform
+ Advanced AI-powered business automation platform with consciousness integration
+ and mathematical optimization for entrepreneurs from pre-seed to exit.

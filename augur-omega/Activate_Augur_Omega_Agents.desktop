@@ -1,0 +1,9 @@
+[Desktop Shortcut]
+Type=Application
+Name=Augur Omega - Activate Permanent Agents
+Comment=Starts the permanent agent service (38+ specialized agents)
+Exec=powershell.exe -WindowStyle Hidden -Command "& 'C:\Users\Dell\Rasa-X-Machina\augur-omega\activate_agents_permanent.bat'"
+Icon=C:\Windows\System32\shell32.dll,167
+StartIn=C:\Users\Dell\Rasa-X-Machina\augur-omega
+Terminal=false
+Categories=Application;

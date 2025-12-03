@@ -1,0 +1,173 @@
+# Triumvirate Integration Configuration
+# Central configuration for Agenta, Pranava, and Antakhara components
+
+# Agenta (Tiered Hierarchy Manager) Configuration
+agenta_config:
+  component_id: "primary"
+  load_balancing_enabled: true
+  intelligent_routing: true
+  hierarchy_levels:
+    - "business_function"
+    - "team"
+    - "microagent"
+    - "kosha"
+  business_functions:
+    - "research_development"
+    - "integration_specialists"
+    - "response_units"
+    - "cross_team_support"
+    - "specialized_depth"
+    - "reserve_teams"
+  routing:
+    strategy: "intelligent"
+    load_threshold: 0.8
+    response_time_weight: 0.4
+
+# Pranava (Orchestration Signal Router) Configuration
+pranava_config:
+  component_id: "primary"
+  health_check_interval: 30
+  signal_ttl: 300
+  max_concurrent_signals: 10000
+  routing_strategies:
+    default: "intelligent"
+    realtime: "least_response_time"
+    batch: "round_robin"
+    compute_intensive: "weighted_round_robin"
+  workflow:
+    max_workflow_steps: 50
+    workflow_timeout: 3600
+    parallel_execution: true
+
+# Antakhara (Security & Policy Enforcement) Configuration
+antakhara_config:
+  component_id: "primary"
+  security_level: "medium"
+  compliance_frameworks:
+    - "gdpr"
+    - "hipaa"
+    - "owasp"
+    - "iso27001"
+  threat_detection:
+    enabled: true
+    sql_injection_detection: true
+    rate_limiting: true
+    anomaly_detection: true
+  audit_logging:
+    enabled: true
+    log_retention_days: 90
+    real_time_alerts: true
+
+# Shared Configuration
+shared_config:
+  message_queue_size: 10000
+  health_check_timeout: 30
+  max_restart_attempts: 3
+  graceful_shutdown_timeout: 30
+  inter_component_timeout: 10
+  heartbeat_interval: 5
+
+# Service Discovery Configuration
+service_discovery:
+  health_check_interval: 30
+  service_ttl: 300
+  auto_discovery: true
+  capability_matching: true
+  service_registration:
+    auto_register: true
+    health_check_url: "/health"
+  load_balancing:
+    enabled: true
+    strategy: "least_connections"
+
+# Monitoring and Observability Configuration
+monitoring:
+  metrics_retention_hours: 24
+  max_alerts: 1000
+  system_metrics_interval: 10
+  health_monitoring: true
+  performance_tracking:
+    enabled: true
+    message_tracking: true
+    component_tracking: true
+  alerting:
+    enabled: true
+    alert_cooldown: 300
+    escalation_levels: 3
+
+# API Configuration
+api_config:
+  host: "0.0.0.0"
+  port: 8000
+  cors_enabled: true
+  rate_limiting: true
+  request_timeout: 30
+  websocket_enabled: true
+  api_versioning: "v1"
+  endpoints:
+    hierarchy: "/api/v1/hierarchy"
+    orchestration: "/api/v1/orchestration"
+    security: "/api/v1/security"
+    monitoring: "/api/v1/monitoring"
+
+# Security Configuration
+security:
+  api_key_required: true
+  jwt_enabled: true
+  https_only: false
+  cors_origins:
+    - "http://localhost:3000"
+    - "http://localhost:8080"
+  rate_limit_per_minute: 1000
+  max_request_size: "10MB"
+  encryption:
+    enabled: true
+    algorithm: "AES-256-GCM"
+
+# Database Configuration
+database:
+  connection_pool:
+    min_connections: 5
+    max_connections: 20
+    connection_timeout: 30
+  monitoring_db:
+    type: "sqlite"
+    path: "data/monitoring.db"
+  audit_db:
+    type: "sqlite"
+    path: "data/audit.db"
+
+# Logging Configuration
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file_logging: true
+  console_logging: true
+  log_file: "logs/triumvirate.log"
+  max_log_file_size: "100MB"
+  log_rotation_count: 5
+  structured_logging: true
+
+# Performance Configuration
+performance:
+  worker_threads: 4
+  async_event_loop: true
+  memory_limits:
+    max_memory_mb: 2048
+    gc_threshold: 700
+  caching:
+    enabled: true
+    cache_size: 1000
+    ttl_seconds: 300
+
+# Deployment Configuration
+deployment:
+  environment: "development"
+  containerization: false
+  orchestration: "standalone"
+  scaling:
+    auto_scaling: false
+    min_instances: 1
+    max_instances: 10
+    cpu_threshold: 80
+    memory_threshold: 85

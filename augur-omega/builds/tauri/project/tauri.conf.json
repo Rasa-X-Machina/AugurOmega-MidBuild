@@ -1,0 +1,41 @@
+{
+  "build": {
+    "distDir": "./src",
+    "devPath": "http://localhost:8080",
+    "beforeDevCommand": "",
+    "beforeBuildCommand": ""
+  },
+  "package": {
+    "productName": "Augur Omega",
+    "version": "1.0.0"
+  },
+  "tauri": {
+    "bundle": {
+      "active": true,
+      "targets": "all",
+      "identifier": "ai.augur.omega",
+      "icon": [
+        "icons/icon.png"
+      ],
+      "resources": [],
+      "externalBin": [],
+      "copyright": "",
+      "category": "DeveloperTool",
+      "shortDescription": "",
+      "longDescription": ""
+    },
+    "updater": {
+      "active": false
+    },
+    "allowlist": {
+      "all": true
+    },
+    "windows": [
+      {
+        "label": "main",
+        "url": "index.html",
+        "title": "Augur Omega"
+      }
+    ]
+  }
+}

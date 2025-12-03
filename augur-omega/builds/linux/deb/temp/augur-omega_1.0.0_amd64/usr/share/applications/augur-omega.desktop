@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Augur Omega
+Comment=AI Business Automation Platform
+Exec=/usr/local/bin/augur-omega
+Icon=augur-omega
+Terminal=false
+Categories=Utility;AI;

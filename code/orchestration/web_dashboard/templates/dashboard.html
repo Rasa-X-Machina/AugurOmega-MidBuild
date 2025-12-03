@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Augur Omega - Agent Orchestration Dashboard</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Socket.io -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.js"></script>
+    
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --success-color: #27ae60;
+            --warning-color: #f39c12;
+            --danger-color: #e74c3c;
+            --dark-bg: #1a1a1a;
+            --card-bg: #2c2c2c;
+            --text-light: #ecf0f1;
+            --border-color: #444;
+        }
+        
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .navbar {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)) !important;
+        }
+        
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+        
+        .card-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-bottom: 1px solid var(--border-color);
+            color: white;
+        }
+        
+        .status-running {
+            color: var(--success-color);
+        }
+        
+        .status-error {
+            color: var(--danger-color);
+        }
+        
+        .status-warning {
+            color: var(--warning-color);
+        }
+        
+        .metric-card {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .metric-value {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .metric-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .agent-card {
+            margin-bottom: 15px;
+            transition: transform 0.2s ease;
+        }
+        
+        .agent-card:hover {
+            transform: translateY(-2px);
+        }
+        
+        .team-section {
+            margin-bottom: 30px;
+        }
+        
+        .alert-item {
+            background-color: var(--card-bg);
+            border-left: 4px solid var(--warning-color);
+            margin-bottom: 10px;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        
+        .alert-critical {
+            border-left-color: var(--danger-color);
+        }
+        
+        .alert-high {
+            border-left-color: var(--warning-color);
+        }
+        
+        .alert-medium {
+            border-left-color: #17a2b8;
+        }
+        
+        .chart-container {
+            position: relative;
+            height: 300px;
+            margin: 20px 0;
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+        
+        .scrollable {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        
+        .progress {
+            height: 8px;
+        }
+        
+        .btn-custom {
+            background-color: var(--secondary-color);
+            border: none;
+            color: white;
+        }
+        
+        .btn-custom:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .last-update {
+            font-size: 0.8rem;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-robot"></i> Augur Omega Dashboard
+            </a>
+            <div class="navbar-nav ms-auto">
+                <span class="navbar-text">
+                    <i class="fas fa-circle text-success" id="connectionStatus"></i>
+                    Connected
+                </span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid mt-3">
+        <!-- System Overview -->
+        <div class="row mb-4">
+            <div class="col-md-3">
+                <div class="card metric-card">
+                    <div class="metric-value text-primary" id="totalAgents">-</div>
+                    <div class="metric-label">Total Agents</div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card metric-card">
+                    <div class="metric-value text-success" id="activeAgents">-</div>
+                    <div class="metric-label">Active Agents</div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card metric-card">
+                    <div class="metric-value text-info" id="activeTeams">-</div>
+                    <div class="metric-label">Active Teams</div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card metric-card">
+                    <div class="metric-value text-warning" id="systemHealth">-</div>
+                    <div class="metric-label">System Health</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Charts Row -->
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0"><i class="fas fa-chart-line"></i> System Performance</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="chart-container">
+                            <canvas id="performanceChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0"><i class="fas fa-chart-pie"></i> Agent Status Distribution</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="chart-container">
+                            <canvas id="statusChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Teams and Agents Row -->
+        <div class="row">
+            <div class="col-md-8">
+                <!-- Team Overview -->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h5 class="mb-0"><i class="fas fa-users"></i> Agent Teams</h5>
+                    </div>
+                    <div class="card-body">
+                        <div id="teamsContainer">
+                            <!-- Teams will be populated here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Agents List -->
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0"><i class="fas fa-user-cog"></i> All Agents</h5>
+                        <span class="last-update">Last update: <span id="lastUpdate">-</span></span>
+                    </div>
+                    <div class="card-body">
+                        <div class="row scrollable" id="agentsContainer">
+                            <!-- Agents will be populated here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="col-md-4">
+                <!-- Recent Alerts -->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h5 class="mb-0"><i class="fas fa-exclamation-triangle"></i> Recent Alerts</h5>
+                    </div>
+                    <div class="card-body">
+                        <div id="alertsContainer" class="scrollable">
+                            <!-- Alerts will be populated here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Audit Reports -->
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0"><i class="fas fa-clipboard-check"></i> Recent Audits</h5>
+                    </div>
+                    <div class="card-body">
+                        <div id="auditContainer" class="scrollable">
+                            <!-- Audit reports will be populated here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Global variables
+        let socket;
+        let performanceChart;
+        let statusChart;
+        let dashboardData = {};
+
+        // Initialize dashboard
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeCharts();
+            connectWebSocket();
+        });
+
+        // Initialize charts
+        function initializeCharts() {
+            // Performance Chart
+            const performanceCtx = document.getElementById('performanceChart').getContext('2d');
+            performanceChart = new Chart(performanceCtx, {
+                type: 'line',
+                data: {
+                    labels: [],
+                    datasets: [
+                        {
+                            label: 'CPU Usage (%)',
+                            data: [],
+                            borderColor: '#3498db',
+                            backgroundColor: 'rgba(52, 152, 219, 0.1)',
+                            fill: true
+                        },
+                        {
+                            label: 'Memory Usage (%)',
+                            data: [],
+                            borderColor: '#e74c3c',
+                            backgroundColor: 'rgba(231, 76, 60, 0.1)',
+                            fill: true
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 100
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            labels: {
+                                color: '#ecf0f1'
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Status Chart
+            const statusCtx = document.getElementById('statusChart').getContext('2d');
+            statusChart = new Chart(statusCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Running', 'Idle', 'Maintenance', 'Error'],
+                    datasets: [{
+                        data: [0, 0, 0, 0],
+                        backgroundColor: ['#27ae60', '#3498db', '#f39c12', '#e74c3c'],
+                        borderWidth: 2,
+                        borderColor: '#2c2c2c'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            labels: {
+                                color: '#ecf0f1'
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        // Connect to WebSocket
+        function connectWebSocket() {
+            socket = io();
+            
+            socket.on('connect', function() {
+                document.getElementById('connectionStatus').className = 'fas fa-circle text-success';
+            });
+            
+            socket.on('disconnect', function() {
+                document.getElementById('connectionStatus').className = 'fas fa-circle text-danger';
+            });
+            
+            socket.on('dashboard_update', function(data) {
+                dashboardData = data;
+                updateDashboard(data);
+            });
+        }
+
+        // Update dashboard
+        function updateDashboard(data) {
+            updateSystemMetrics(data.system_metrics);
+            updateTeamData(data.team_data);
+            updateAgentData(data.agent_data);
+            updateAlerts(data.alerts);
+            updateAuditReports(data.audit_reports);
+            updateCharts(data);
+            updateLastUpdate(data.last_update);
+        }
+
+        // Update system metrics
+        function updateSystemMetrics(metrics) {
+            if (!metrics) return;
+            
+            document.getElementById('totalAgents').textContent = metrics.total_agents || '-';
+            document.getElementById('activeTeams').textContent = metrics.active_teams || '-';
+            document.getElementById('activeAgents').textContent = getActiveAgentsCount();
+            
+            const systemHealth = Math.round(
+                ((100 - metrics.cpu_usage) + (100 - metrics.memory_usage) + (100 - metrics.error_rate)) / 3
+            );
+            document.getElementById('systemHealth').textContent = systemHealth + '%';
+        }
+
+        // Update team data
+        function updateTeamData(teamData) {
+            const container = document.getElementById('teamsContainer');
+            container.innerHTML = '';
+            
+            Object.entries(teamData).forEach(([teamName, team]) => {
+                const teamCard = createTeamCard(teamName, team);
+                container.appendChild(teamCard);
+            });
+        }
+
+        // Create team card
+        function createTeamCard(teamName, team) {
+            const div = document.createElement('div');
+            div.className = 'team-section card';
+            
+            const healthColor = team.avg_health_score >= 90 ? 'text-success' : 
+                              team.avg_health_score >= 80 ? 'text-warning' : 'text-danger';
+            
+            div.innerHTML = `
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6 class="text-uppercase">${teamName.replace('_', ' ')}</h6>
+                            <small>${team.active_agents}/${team.total_agents} agents active</small>
+                        </div>
+                        <div class="col-md-6 text-end">
+                            <span class="${healthColor}">
+                                <i class="fas fa-heartbeat"></i> ${team.avg_health_score}%
+                            </span>
+                            <br>
+                            <small>${team.total_tasks} tasks completed</small>
+                        </div>
+                    </div>
+                    <div class="progress mt-2">
+                        <div class="progress-bar ${team.avg_health_score >= 90 ? 'bg-success' : 
+                                              team.avg_health_score >= 80 ? 'bg-warning' : 'bg-danger'}" 
+                             style="width: ${team.avg_health_score}%"></div>
+                    </div>
+                </div>
+            `;
+            
+            return div;
+        }
+
+        // Update agent data
+        function updateAgentData(agentData) {
+            const container = document.getElementById('agentsContainer');
+            container.innerHTML = '';
+            
+            Object.entries(agentData).forEach(([agentId, agent]) => {
+                const agentCard = createAgentCard(agentId, agent);
+                container.appendChild(agentCard);
+            });
+        }
+
+        // Create agent card
+        function createAgentCard(agentId, agent) {
+            const div = document.createElement('div');
+            div.className = 'col-md-6';
+            
+            const statusClass = agent.status === 'running' ? 'text-success' : 
+                               agent.status === 'idle' ? 'text-warning' : 'text-danger';
+            
+            div.innerHTML = `
+                <div class="card agent-card">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <div>
+                                <h6 class="card-title mb-1">${agent.name}</h6>
+                                <small class="text-muted">${agent.type}</small>
+                            </div>
+                            <span class="${statusClass}">
+                                <i class="fas fa-circle"></i> ${agent.status}
+                            </span>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-4">
+                                <small>CPU</small>
+                                <div class="progress" style="height: 4px;">
+                                    <div class="progress-bar" style="width: ${agent.metrics.cpu_usage}%"></div>
+                                </div>
+                                <small>${agent.metrics.cpu_usage}%</small>
+                            </div>
+                            <div class="col-4">
+                                <small>Memory</small>
+                                <div class="progress" style="height: 4px;">
+                                    <div class="progress-bar bg-info" style="width: ${agent.metrics.memory_usage}%"></div>
+                                </div>
+                                <small>${agent.metrics.memory_usage}%</small>
+                            </div>
+                            <div class="col-4">
+                                <small>Health</small>
+                                <div class="progress" style="height: 4px;">
+                                    <div class="progress-bar ${agent.metrics.health_score >= 90 ? 'bg-success' : 
+                                                                  agent.metrics.health_score >= 80 ? 'bg-warning' : 'bg-danger'}" 
+                                         style="width: ${agent.metrics.health_score}%"></div>
+                                </div>
+                                <small>${agent.metrics.health_score}%</small>
+                            </div>
+                        </div>
+                        <small class="text-muted d-block mt-2">
+                            Tasks: ${agent.metrics.tasks_completed} | 
+                            Restarts: ${agent.metrics.restart_count}
+                        </small>
+                    </div>
+                </div>
+            `;
+            
+            return div;
+        }
+
+        // Update alerts
+        function updateAlerts(alerts) {
+            const container = document.getElementById('alertsContainer');
+            container.innerHTML = '';
+            
+            if (alerts.length === 0) {
+                container.innerHTML = '<div class="text-center text-muted">No recent alerts</div>';
+                return;
+            }
+            
+            alerts.slice(0, 5).forEach(alert => {
+                const alertDiv = document.createElement('div');
+                alertDiv.className = `alert-item alert-${alert.severity.toLowerCase()}`;
+                
+                alertDiv.innerHTML = `
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <strong>${alert.type}</strong>
+                            <br>
+                            <small>${alert.message}</small>
+                        </div>
+                        <div class="text-end">
+                            <small class="text-muted">${new Date(alert.timestamp).toLocaleTimeString()}</small>
+                        </div>
+                    </div>
+                `;
+                
+                container.appendChild(alertDiv);
+            });
+        }
+
+        // Update audit reports
+        function updateAuditReports(auditReports) {
+            const container = document.getElementById('auditContainer');
+            container.innerHTML = '';
+            
+            if (auditReports.length === 0) {
+                container.innerHTML = '<div class="text-center text-muted">No recent audits</div>';
+                return;
+            }
+            
+            auditReports.slice(0, 5).forEach(report => {
+                const statusClass = report.status === 'PASSED' ? 'text-success' : 
+                                  report.status === 'WARNING' ? 'text-warning' : 'text-danger';
+                
+                const auditDiv = document.createElement('div');
+                auditDiv.className = 'mb-2 p-2 border rounded';
+                
+                auditDiv.innerHTML = `
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <strong>Build ${report.build_id}</strong>
+                            <br>
+                            <small>${report.platform}</small>
+                        </div>
+                        <div class="text-end">
+                            <span class="${statusClass}">${report.status}</span>
+                            <br>
+                            <small>${report.overall_score}%</small>
+                        </div>
+                    </div>
+                `;
+                
+                container.appendChild(auditDiv);
+            });
+        }
+
+        // Update charts
+        function updateCharts(data) {
+            // Update performance chart with historical data
+            if (data.performance_history && data.performance_history.length > 0) {
+                const latestMetrics = data.performance_history[data.performance_history.length - 1].metrics;
+                
+                // Add new data point
+                const now = new Date().toLocaleTimeString();
+                
+                performanceChart.data.labels.push(now);
+                performanceChart.data.datasets[0].data.push(latestMetrics.cpu_usage);
+                performanceChart.data.datasets[1].data.push(latestMetrics.memory_usage);
+                
+                // Keep only last 20 data points
+                if (performanceChart.data.labels.length > 20) {
+                    performanceChart.data.labels.shift();
+                    performanceChart.data.datasets.forEach(dataset => dataset.data.shift());
+                }
+                
+                performanceChart.update('none');
+            }
+            
+            // Update status chart
+            const statusCounts = getStatusCounts(data.agent_data);
+            statusChart.data.datasets[0].data = [
+                statusCounts.running,
+                statusCounts.idle,
+                statusCounts.maintenance,
+                statusCounts.error
+            ];
+            statusChart.update('none');
+        }
+
+        // Get active agents count
+        function getActiveAgentsCount() {
+            const agentData = dashboardData.agent_data || {};
+            return Object.values(agentData).filter(agent => agent.status === 'running').length;
+        }
+
+        // Get status counts
+        function getStatusCounts(agentData) {
+            const counts = { running: 0, idle: 0, maintenance: 0, error: 0 };
+            
+            Object.values(agentData || {}).forEach(agent => {
+                if (counts[agent.status] !== undefined) {
+                    counts[agent.status]++;
+                }
+            });
+            
+            return counts;
+        }
+
+        // Update last update time
+        function updateLastUpdate(timestamp) {
+            if (timestamp) {
+                document.getElementById('lastUpdate').textContent = new Date(timestamp).toLocaleTimeString();
+            }
+        }
+    </script>
+</body>
+</html>

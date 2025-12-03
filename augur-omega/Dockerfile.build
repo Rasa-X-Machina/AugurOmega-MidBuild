@@ -1,0 +1,51 @@
+# Augur Omega: Multi-Platform Build System
+# Complete build configurations for all platforms
+
+# Docker build files for Linux distributions
+FROM python:3.11-slim
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    gcc \
+    g++ \
+    make \
+    curl \
+    wget \
+    git \
+    build-essential \
+    pkg-config \
+    libc6-dev \
+    libssl-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+# Create app directory
+WORKDIR /app
+
+# Copy requirements first for better caching
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Install additional packages for GUI dependencies (if needed)
+RUN apt-get update && apt-get install -y \
+    libgtk-3-dev \
+    libwebkit2gtk-4.0-dev \
+    libappindicator3-dev \
+    librsvg2-dev \
+    patchelf \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy application code
+COPY . .
+
+# Create build directories
+RUN mkdir -p builds/linux builds/windows builds/macos
+
+# Setup build environment
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
+
+# Expose port if needed for web services
+EXPOSE 8080
+
+# Run application
+CMD ["python", "main.py"]

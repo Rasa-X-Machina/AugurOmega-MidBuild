@@ -1,0 +1,216 @@
+{
+  "brand": {
+    "name": "Augur Omega RXM UI/UX System",
+    "version": "1.0.0",
+    "description": "UI/UX system redesigned to match RXM brand system with 1080p/2K elegance and simplified navigation"
+  },
+  "color_scheme": {
+    "primary": {
+      "mystical_purple": "#6B46C1",
+      "mystical_purple_light": "#8B5CF6",
+      "mystical_purple_dark": "#553C9A"
+    },
+    "holographic": {
+      "cyan": "#00F5FF",
+      "magenta": "#FF00FF",
+      "matrix_green": "#00FF41"
+    },
+    "revenue": {
+      "gold": "#FFD700",
+      "gold_light": "#FFED4E",
+      "gold_dark": "#B8860B"
+    },
+    "neutrals": {
+      "deep_space": "#0F0F23",
+      "space_light": "#1A1A2E",
+      "mystical_gray": "#16213E",
+      "pure_white": "#FFFFFF"
+    },
+    "semantic": {
+      "success": "#00FF41",
+      "warning": "#FFD700",
+      "error": "#FF6B6B",
+      "info": "#00F5FF"
+    },
+    "gradients": {
+      "primary_mystical": "linear-gradient(135deg, #6B46C1 0%, #8B5CF6 50%, #00F5FF 100%)",
+      "holographic": "linear-gradient(45deg, #00F5FF 0%, #FF00FF 33%, #00FF41 66%, #FFD700 100%)",
+      "revenue": "linear-gradient(135deg, #FFD700 0%, #FF6B6B 50%, #8B5CF6 100%)",
+      "dark_mystical": "linear-gradient(135deg, #0F0F23 0%, #1A1A2E 50%, #16213E 100%)"
+    }
+  },
+  "typography": {
+    "font_family": {
+      "primary": "Inter, system-ui, sans-serif",
+      "display": "Proxima Nova, system-ui, sans-serif",
+      "monospace": "Fira Code, Monaco, monospace"
+    },
+    "heading": {
+      "h1": "2.5rem bold",
+      "h2": "2rem semibold",
+      "h3": "1.5rem medium",
+      "h4": "1.25rem regular",
+      "h5": "1.125rem regular",
+      "h6": "1rem medium"
+    },
+    "body": {
+      "large": "1.125rem regular",
+      "regular": "1rem regular",
+      "small": "0.875rem regular",
+      "tiny": "0.75rem regular"
+    },
+    "weight": {
+      "thin": 100,
+      "extralight": 200,
+      "light": 300,
+      "regular": 400,
+      "medium": 500,
+      "semibold": 600,
+      "bold": 700,
+      "extrabold": 800,
+      "black": 900
+    }
+  },
+  "screen_resolutions": {
+    "supported_resolutions": ["1920x1080", "2560x1440", "3840x2160"],
+    "breakpoints": {
+      "mobile": "320px",
+      "tablet": "768px",
+      "desktop": "1024px",
+      "wide": "1440px"
+    }
+  },
+  "layout": {
+    "spacing": {
+      "xxs": "0.25rem",
+      "xs": "0.5rem",
+      "sm": "0.75rem",
+      "md": "1rem",
+      "lg": "1.5rem",
+      "xl": "2rem",
+      "xxl": "3rem",
+      "xxxl": "4rem"
+    },
+    "container": {
+      "max_width": "1400px",
+      "padding": {
+        "mobile": "1rem",
+        "desktop": "2rem"
+      }
+    },
+    "grid": {
+      "columns": 12,
+      "gutter": "2rem",
+      "gap": "1rem"
+    }
+  },
+  "component_styles": {
+    "button": {
+      "primary": {
+        "bg": "var(--mystical-purple)",
+        "text_color": "white",
+        "hover_bg": "var(--mystical-purple-light)",
+        "active_bg": "var(--mystical-purple-dark)",
+        "border_radius": "0.5rem",
+        "padding": "0.75rem 1.5rem",
+        "font_weight": "600"
+      },
+      "gradient_primary": {
+        "bg": "var(--primary-mystical-gradient)",
+        "text_color": "white",
+        "hover_bg": "linear-gradient(135deg, #7C3AED 0%, #A78BFA 50%, #06B6D4 100%)",
+        "active_bg": "linear-gradient(135deg, #553C9A 0%, #7C3AED 50%, #00D4D4 100%)"
+      }
+    },
+    "card": {
+      "bg": "var(--space-light)",
+      "border": "1px solid var(--mystical-gray)",
+      "border_radius": "0.75rem",
+      "box_shadow": "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
+      "padding": "1.5rem"
+    },
+    "input": {
+      "bg": "var(--mystical-gray)",
+      "text_color": "white",
+      "border": "1px solid var(--mystical-gray)",
+      "border_radius": "0.5rem",
+      "focus_border": "1px solid var(--mystical-purple-light)",
+      "placeholder_color": "#9CA3AF"
+    },
+    "navigation": {
+      "sidebar_width": "280px",
+      "topbar_height": "70px",
+      "bg": "var(--deep-space)",
+      "item_hover_bg": "var(--mystical-gray)",
+      "active_item_bg": "var(--mystical-purple-dark)",
+      "text_color": "white",
+      "active_text_color": "var(--pure-white)"
+    }
+  },
+  "modes": {
+    "essence": {
+      "name": "Essence Mode",
+      "description": "Simple, clean interface showing only essential information",
+      "bg": "var(--deep-space)",
+      "cards_bg": "var(--space-light)",
+      "primary_elements": ["main_focus_task", "key_insights", "priority_items", "natural_language_input"]
+    },
+    "smart": {
+      "name": "Smart Mode",
+      "description": "AI-optimized configuration with automatic adjustments",
+      "bg": "var(--space-light)",
+      "cards_bg": "var(--mystical-gray)",
+      "primary_elements": ["ai_recommendations", "optimized_settings", "automatic_updates"]
+    },
+    "expert": {
+      "name": "Expert Mode",
+      "description": "Full access to all settings and configurations",
+      "bg": "var(--mystical-gray)",
+      "cards_bg": "var(--space-light)",
+      "primary_elements": ["all_controls", "detailed_configs", "system_metrics"]
+    }
+  },
+  "features": {
+    "settings_menu": {
+      "type": "slide_drawer",
+      "width": "400px",
+      "bg": "var(--deep-space)",
+      "sections": ["appearance", "behavior", "integration", "notifications", "advanced"]
+    },
+    "json_editor": {
+      "type": "split_screen",
+      "left_panel": {
+        "name": "Natural Language Input",
+        "bg": "var(--space-light)"
+      },
+      "right_panel": {
+        "name": "JSON Output",
+        "bg": "var(--mystical-gray)"
+      },
+      "converter_api": "nl_to_json_converter"
+    },
+    "navigation": {
+      "type": "hierarchical_collapsible",
+      "home_icon": "home",
+      "mode_switcher": {
+        "type": "toggle_button",
+        "positions": ["essence", "smart", "expert"]
+      }
+    }
+  },
+  "accessibility": {
+    "contrast_ratios": {
+      "aa_normal": "4.5:1",
+      "aa_large": "3:1",
+      "aaa_normal": "7:1",
+      "aaa_large": "4.5:1"
+    },
+    "keyboard_shortcuts": {
+      "mode_switch": "Ctrl+M",
+      "settings_menu": "Ctrl+,",
+      "search": "Ctrl+K",
+      "json_editor": "Ctrl+J"
+    },
+    "screen_reader_support": true
+  }
+}

@@ -1,0 +1,1 @@
+Augur Omega Portable Application for macOS

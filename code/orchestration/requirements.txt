@@ -1,0 +1,38 @@
+# Augur Omega Enhanced Orchestration System
+# Core dependencies
+
+# Web Framework and Real-time Communication
+Flask==2.3.3
+Flask-SocketIO==5.3.6
+Flask-CORS==4.0.0
+
+# Process and System Monitoring
+psutil==5.9.5
+
+# Configuration and Data Management
+configparser==6.0.0
+pyyaml==6.0.1
+
+# Development and Testing
+pytest==7.4.3
+pytest-asyncio==0.21.1
+
+# Optional: Database support (if needed in future)
+# sqlite3 (built-in)
+# SQLAlchemy==2.0.21
+
+# Optional: Message Queue support (for advanced features)
+# celery==5.3.4
+# redis==5.0.1
+
+# Optional: Machine Learning (for advanced analytics)
+# numpy==1.24.3
+# pandas==2.1.1
+
+# Optional: Security and Authentication
+# bcrypt==4.0.1
+# pyjwt==2.8.0
+
+# Optional: Advanced Monitoring and Metrics
+# prometheus-client==0.17.1
+# grafana-api==1.0.3

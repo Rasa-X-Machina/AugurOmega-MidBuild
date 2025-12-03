@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Augur Omega - JSON Settings Editor</title>
+    <link rel="stylesheet" href="../css/brand_aligned_styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --editor-bg: var(--mystical-gray);
+            --editor-text: var(--pure-white);
+            --editor-border: var(--mystical-purple-light);
+            --editor-accent: var(--mystical-purple);
+        }
+        
+        .json-editor-container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            background: var(--deep-space);
+            color: var(--pure-white);
+            font-family: var(--font-primary);
+        }
+
+        .editor-header {
+            background: var(--space-light);
+            padding: var(--spacing-lg);
+            border-bottom: 1px solid var(--mystical-gray);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .editor-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--mystical-purple-light);
+        }
+
+        .editor-actions {
+            display: flex;
+            gap: var(--spacing-md);
+        }
+
+        .editor-body {
+            display: flex;
+            flex: 1;
+            overflow: hidden;
+        }
+
+        .editor-panel {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding: var(--spacing-lg);
+            overflow: hidden;
+        }
+
+        .editor-panel.natural-language {
+            border-right: 1px solid var(--mystical-gray);
+        }
+
+        .panel-title {
+            font-size: 1.2rem;
+            margin-bottom: var(--spacing-md);
+            color: var(--mystical-purple-light);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+        }
+
+        .panel-description {
+            color: #9CA3AF;
+            font-size: 0.9rem;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .input-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            background: var(--space-light);
+            border: 1px solid var(--mystical-gray);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+        }
+
+        textarea {
+            flex: 1;
+            background: var(--mystical-gray);
+            color: var(--pure-white);
+            border: none;
+            padding: var(--spacing-lg);
+            font-family: var(--font-monospace);
+            font-size: 1rem;
+            resize: none;
+            outline: none;
+        }
+
+        .editor-container {
+            flex: 1;
+            background: var(--mystical-gray);
+            border: 1px solid var(--mystical-gray);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            position: relative;
+        }
+
+        #json-editor {
+            width: 100%;
+            height: 100%;
+            background: var(--mystical-gray);
+            color: var(--pure-white);
+            border: none;
+            padding: var(--spacing-lg);
+            font-family: var(--font-monospace);
+            font-size: 1rem;
+            resize: none;
+            outline: none;
+            box-sizing: border-box;
+        }
+
+        .editor-controls {
+            padding: var(--spacing-md);
+            background: var(--space-light);
+            border-top: 1px solid var(--mystical-gray);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .status-indicator {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            font-size: 0.9rem;
+        }
+
+        .status-valid {
+            color: var(--success-color);
+        }
+
+        .status-invalid {
+            color: var(--error-color);
+        }
+
+        .validation-message {
+            font-size: 0.8rem;
+            color: #9CA3AF;
+        }
+
+        .preview-container {
+            flex: 1;
+            background: var(--space-light);
+            border: 1px solid var(--mystical-gray);
+            border-radius: var(--radius-md);
+            overflow: auto;
+            padding: var(--spacing-lg);
+        }
+
+        .preview-header {
+            font-size: 1.1rem;
+            margin-bottom: var(--spacing-md);
+            color: var(--mystical-purple-light);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+        }
+
+        .json-preview {
+            background: var(--mystical-gray);
+            padding: var(--spacing-md);
+            border-radius: var(--radius-md);
+            font-family: var(--font-monospace);
+            font-size: 0.9rem;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            max-height: 400px;
+            overflow: auto;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: var(--spacing-md);
+        }
+    </style>
+</head>
+<body>
+    <div class="json-editor-container">
+        <div class="editor-header">
+            <h2 class="editor-title">JSON Settings Editor</h2>
+            <div class="editor-actions">
+                <button class="btn btn-outline" id="load-defaults">
+                    <i class="fas fa-undo"></i> Load Defaults
+                </button>
+                <button class="btn btn-outline" id="import-json">
+                    <i class="fas fa-file-import"></i> Import
+                </button>
+                <button class="btn btn-primary" id="export-json">
+                    <i class="fas fa-file-export"></i> Export
+                </button>
+            </div>
+        </div>
+
+        <div class="editor-body">
+            <div class="editor-panel natural-language">
+                <h3 class="panel-title">
+                    <i class="fas fa-keyboard"></i> Natural Language Input
+                </h3>
+                <p class="panel-description">
+                    Describe your settings changes in plain English. Our converter will transform your description into JSON.
+                </p>
+                <div class="input-container">
+                    <textarea id="natural-input" placeholder="Example: Change theme to light mode and set performance to high"></textarea>
+                </div>
+                <div class="editor-controls">
+                    <div class="status-indicator">
+                        <span>Natural Language Input</span>
+                    </div>
+                    <button class="btn btn-primary" id="convert-btn">
+                        <i class="fas fa-bolt"></i> Convert to JSON
+                    </button>
+                </div>
+            </div>
+
+            <div class="editor-panel json-editor">
+                <h3 class="panel-title">
+                    <i class="fas fa-code"></i> JSON Editor
+                </h3>
+                <p class="panel-description">
+                    Edit your configuration directly as JSON. Syntax validation is performed automatically.
+                </p>
+                <div class="editor-container">
+                    <textarea id="json-editor" placeholder="Your JSON configuration will appear here..."></textarea>
+                </div>
+                <div class="editor-controls">
+                    <div class="status-indicator">
+                        <i class="fas fa-check-circle status-valid" id="validation-icon"></i>
+                        <span id="validation-status">Valid JSON</span>
+                        <div class="validation-message" id="validation-message"></div>
+                    </div>
+                    <div class="btn-group">
+                        <button class="btn btn-outline" id="format-btn">
+                            <i class="fas fa-indent"></i> Format
+                        </button>
+                        <button class="btn btn-primary" id="apply-btn">
+                            <i class="fas fa-check"></i> Apply Changes
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="editor-panel preview">
+            <h3 class="preview-header">
+                <i class="fas fa-eye"></i> Configuration Preview
+            </h3>
+            <div class="preview-container">
+                <div class="json-preview" id="json-preview">
+                    // Configuration preview will appear here
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="json_editor_app.js"></script>
+</body>
+</html>

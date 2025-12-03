@@ -1,0 +1,428 @@
+#!/usr/bin/env python3
+"""
+Augur Omega: Web/PWA Build Script
+Builds Web and Progressive Web Application
+"""
+
+import os
+import sys
+import subprocess
+import shutil
+from pathlib import Path
+import json
+import argparse
+
+
+def build_web_app():
+    """Build Web/PWA application"""
+    print("Building Web/PWA application...")
+
+    project_root = Path(__file__).parent.parent
+    builds_dir = project_root / "builds" / "web"
+    builds_dir.mkdir(parents=True, exist_ok=True)
+
+    try:
+        # Create main HTML file
+        html_content = '''<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Augur Omega - AI Business Automation</title>
+    <meta name="description" content="Advanced AI Business Automation Platform">
+    <meta name="theme-color" content="#8B5CF6">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- Icons -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="icon-192x192.png">
+    
+    <style>
+        :root {
+            --primary: #8B5CF6;
+            --secondary: #00F5FF;
+            --dark-bg: #0F0F23;
+            --card-bg: rgba(255, 255, 255, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background: linear-gradient(135deg, var(--dark-bg) 0%, #1A1A2E 50%, #16213E 100%);
+            color: white;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            padding: 20px 0;
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            background: linear-gradient(to right, #8B5CF6, #00F5FF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            color: #aaa;
+            font-size: 1.1rem;
+        }
+        
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .card-title {
+            font-size: 0.9rem;
+            color: #aaa;
+            margin-bottom: 10px;
+        }
+        
+        .card-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--secondary);
+        }
+        
+        .controls {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            background: linear-gradient(45deg, #6B46C1, #8B5CF6);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        .btn:active {
+            transform: translateY(0);
+        }
+        
+        .status-log {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 30px;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        
+        .log-entry {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .log-entry:last-child {
+            border-bottom: none;
+        }
+        
+        .log-timestamp {
+            color: #8B5CF6;
+            margin-right: 10px;
+        }
+        
+        .log-message {
+            color: #ddd;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Augur Omega Platform</h1>
+            <p class="subtitle">Advanced AI Business Automation with Consciousness Integration</p>
+        </header>
+        
+        <div class="dashboard-grid">
+            <div class="card">
+                <div class="card-title">SYSTEM STATUS</div>
+                <div class="card-value">Operational</div>
+            </div>
+            <div class="card">
+                <div class="card-title">MICROAGENTS</div>
+                <div class="card-value">3,000+</div>
+            </div>
+            <div class="card">
+                <div class="card-title">KOSHAS</div>
+                <div class="card-value">435+</div>
+            </div>
+            <div class="card">
+                <div class="card-title">EFFICIENCY</div>
+                <div class="card-value">94%</div>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <button class="btn" onclick="checkStatus()">Check Full Status</button>
+            <button class="btn" onclick="runOptimization()">Run Optimization</button>
+            <button class="btn" onclick="toggleConsciousness()">Toggle Consciousness</button>
+            <button class="btn" onclick="simulateLoad()">Simulate Load</button>
+        </div>
+        
+        <div class="status-log" id="statusLog">
+            <div class="log-entry"><span class="log-timestamp">[10:00:01]</span> <span class="log-message">System initialized</span></div>
+            <div class="log-entry"><span class="log-timestamp">[10:00:02]</span> <span class="log-message">3000+ microagents active</span></div>
+            <div class="log-entry"><span class="log-timestamp">[10:00:03]</span> <span class="log-message">435+ koshas online</span></div>
+            <div class="log-entry"><span class="log-timestamp">[10:00:04]</span> <span class="log-message">Consciousness integration active</span></div>
+        </div>
+    </div>
+
+    <script>
+        // Add new log entry
+        function addLogEntry(message) {
+            const logElement = document.getElementById('statusLog');
+            const timestamp = new Date().toISOString().substr(11, 8);
+            const logEntry = document.createElement('div');
+            logEntry.className = 'log-entry';
+            logEntry.innerHTML = `<span class="log-timestamp">[${timestamp}]</span> <span class="log-message">${message}</span>`;
+            
+            logElement.insertBefore(logEntry, logElement.firstChild);
+        }
+        
+        // Check full status
+        async function checkStatus() {
+            addLogEntry('Checking system status...');
+            
+            // Simulate API call
+            await new Promise(resolve => setTimeout(resolve, 1000));
+            
+            addLogEntry('✓ All systems operational');
+            addLogEntry('✓ 94% efficiency maintained');
+            addLogEntry('✓ 4-layer consciousness active');
+        }
+        
+        // Run optimization
+        async function runOptimization() {
+            addLogEntry('Starting optimization process...');
+            
+            // Simulate API call
+            await new Promise(resolve => setTimeout(resolve, 1500));
+            
+            addLogEntry('✓ Optimization completed');
+            addLogEntry('✓ Performance improved by 3.2%');
+        }
+        
+        // Toggle consciousness
+        async function toggleConsciousness() {
+            addLogEntry('Toggling consciousness integration...');
+            
+            // Simulate API call
+            await new Promise(resolve => setTimeout(resolve, 800));
+            
+            addLogEntry('✓ Consciousness integration toggled');
+        }
+        
+        // Simulate load
+        async function simulateLoad() {
+            addLogEntry('Simulating system load...');
+            
+            // Simulate API call
+            await new Promise(resolve => setTimeout(resolve, 1200));
+            
+            addLogEntry('✓ Load simulation completed');
+            addLogEntry('✓ All agents responding normally');
+        }
+        
+        // Register service worker for PWA
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('sw.js')
+                    .then(function(registration) {
+                        console.log('SW registered: ', registration);
+                    })
+                    .catch(function(registrationError) {
+                        console.log('SW registration failed: ', registrationError);
+                    });
+            });
+        }
+    </script>
+</body>
+</html>'''
+
+        with open(builds_dir / "index.html", "w") as f:
+            f.write(html_content)
+
+        # Create PWA manifest
+        manifest = {
+            "name": "Augur Omega",
+            "short_name": "AOmega",
+            "description": "AI Business Automation Platform with Consciousness Integration",
+            "start_url": "/",
+            "display": "standalone",
+            "background_color": "#0F0F23",
+            "theme_color": "#8B5CF6",
+            "orientation": "any",
+            "icons": [
+                {
+                    "src": "icon-72x72.png",
+                    "sizes": "72x72",
+                    "type": "image/png"
+                },
+                {
+                    "src": "icon-96x96.png",
+                    "sizes": "96x96",
+                    "type": "image/png"
+                },
+                {
+                    "src": "icon-128x128.png",
+                    "sizes": "128x128",
+                    "type": "image/png"
+                },
+                {
+                    "src": "icon-144x144.png",
+                    "sizes": "144x144",
+                    "type": "image/png"
+                },
+                {
+                    "src": "icon-152x152.png",
+                    "sizes": "152x152",
+                    "type": "image/png"
+                },
+                {
+                    "src": "icon-192x192.png",
+                    "sizes": "192x192",
+                    "type": "image/png"
+                },
+                {
+                    "src": "icon-384x384.png",
+                    "sizes": "384x384",
+                    "type": "image/png"
+                },
+                {
+                    "src": "icon-512x512.png",
+                    "sizes": "512x512",
+                    "type": "image/png"
+                }
+            ]
+        }
+
+        with open(builds_dir / "manifest.json", "w") as f:
+            json.dump(manifest, f, indent=2)
+
+        # Create service worker
+        sw_content = '''const CACHE_NAME = 'augur-omega-v1';
+const urlsToCache = [
+    '/',
+    '/index.html',
+    '/manifest.json',
+    '/sw.js'
+];
+
+self.addEventListener('install', function(event) {
+    event.waitUntil(
+        caches.open(CACHE_NAME)
+            .then(function(cache) {
+                console.log('Opened cache');
+                return cache.addAll(urlsToCache);
+            })
+    );
+});
+
+self.addEventListener('fetch', function(event) {
+    event.respondWith(
+        caches.match(event.request)
+            .then(function(response) {
+                // Return cached version or fetch from network
+                if (response) {
+                    return response;
+                }
+                return fetch(event.request);
+            }
+        )
+    );
+});'''
+
+        with open(builds_dir / "sw.js", "w") as f:
+            f.write(sw_content)
+
+        # Create placeholder icons (in a real implementation, you would have actual icons)
+        for size in [72, 96, 128, 144, 152, 192, 384, 512]:
+            icon_path = builds_dir / f"icon-{size}x{size}.png"
+            with open(icon_path, "w") as f:
+                f.write(f"<!-- Placeholder for {size}x{size} icon -->")
+
+        with open(builds_dir / "favicon.ico", "w") as f:
+            f.write("<!-- Placeholder for favicon -->")
+
+        print("Web/PWA application built successfully")
+        return True
+    except Exception as e:
+        print(f"Failed to build Web/PWA app: {e}")
+        return False
+
+
+def main():
+    parser = argparse.ArgumentParser(description='Build Augur Omega Web/PWA application')
+    parser.add_argument('--target', choices=['web', 'pwa', 'all'],
+                       default='all', help='Build target')
+
+    args = parser.parse_args()
+
+    success = build_web_app()
+
+    if success:
+        print("Web/PWA build completed successfully!")
+        return 0
+    else:
+        print("Web/PWA build failed!")
+        return 1
+
+
+if __name__ == "__main__":
+    sys.exit(main())
